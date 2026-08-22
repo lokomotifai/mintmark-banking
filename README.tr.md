@@ -83,8 +83,7 @@ hepsini tutturuyor.
 ## Kendiniz basın
 
 ```bash
-# Motor henüz PyPI'de değil; depodan kurun.
-uv tool install git+https://github.com/lokomotifai/mintmark
+uv tool install mintmark
 git clone https://github.com/lokomotifai/mintmark-banking
 cd mintmark-banking
 
@@ -238,8 +237,8 @@ koştuğu artefakt kadar iyidir.
 Sürüm 0.1.2, yayımlandı. İki referans veri kümesi
 [v0.1.2](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2) sürümüne ekli;
 [docs/reference-datasets.json](docs/reference-datasets.json) içinde bildirilen
-tohumlarla ve güvenli kimlik politikasıyla üretildiler. Motor henüz PyPI'de
-değil, bu yüzden deposundan kurun.
+tohumlarla ve güvenli kimlik politikasıyla üretildiler. Motor PyPI'de
+[`mintmark`](https://pypi.org/project/mintmark/) olarak yayımlanmıştır.
 
 Tohumlar bilerek yerleşiktir. Değişen bir tohum yayımlanmış bir manifestoyu
 sessizce geçersizleştirir, dolayısıyla asla bir kapsam eksiğinin çözümü değildir;
