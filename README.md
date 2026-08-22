@@ -15,7 +15,7 @@
   <a href="https://github.com/lokomotifai/mintmark-banking/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/lokomotifai/mintmark-banking/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
   <img alt="53 tests" src="https://img.shields.io/badge/tests-53-3C873A?style=flat-square">
   <img alt="Zero engine code" src="https://img.shields.io/badge/engine%20code-none-3C873A?style=flat-square">
-  <img alt="No release published" src="https://img.shields.io/badge/release-not%20published-3B3F46?style=flat-square">
+  <a href="https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2"><img alt="Release v0.1.2" src="https://img.shields.io/badge/release-v0.1.2-3C873A?style=flat-square"></a>
   <a href="LICENSE"><img alt="Apache-2.0 license" src="https://img.shields.io/badge/license-Apache--2.0-3B3F46?style=flat-square"></a>
 </p>
 
@@ -50,8 +50,9 @@ AI pilot environments without KVKK exposure, and their vendors cannot reasonably
 ask them to. This pack declares the data those environments need, and the engine
 mints it: deterministic, span-labeled, and sealed by a manifest anyone can check.
 
-**Version 0.1, pre-release. No release has been published and no reference
-dataset exists yet to download.** What is true today: `packcheck` passes against
+**Version 0.1.2. Two reference datasets are published as assets on
+[v0.1.2](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2), each
+carrying its own manifest and checksums.** What is true today: `packcheck` passes against
 the pinned core, 53 tests pass, and the evaluation recipe meets every one of its
 eighteen coverage targets.
 
@@ -82,7 +83,8 @@ eighteen coverage targets.
 ## Mint it yourself
 
 ```bash
-uv tool install mintmark
+# The engine is not on PyPI yet; install it from the repository.
+uv tool install git+https://github.com/lokomotifai/mintmark
 git clone https://github.com/lokomotifai/mintmark-banking
 cd mintmark-banking
 
@@ -231,11 +233,11 @@ as the artifact it runs against.
 
 ## Project status
 
-Version 0.1, pre-release. No release, no published dataset. The reference
-datasets are declared in
-[docs/reference-datasets.json](docs/reference-datasets.json) with their settled
-seeds, and publishing them is an external authorization checkpoint along with
-confirming the dataset license.
+Version 0.1.2, released. Two reference datasets are attached to
+[v0.1.2](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2), minted with the
+safe identifier policy at the seeds declared in
+[docs/reference-datasets.json](docs/reference-datasets.json). The engine is not on
+PyPI yet, so install it from its repository.
 
 The seeds are settled deliberately. A changed seed silently invalidates a
 published manifest, so it is never the fix for a coverage miss; the templates or

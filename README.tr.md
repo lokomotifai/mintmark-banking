@@ -15,7 +15,7 @@
   <a href="https://github.com/lokomotifai/mintmark-banking/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/lokomotifai/mintmark-banking/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
   <img alt="53 test" src="https://img.shields.io/badge/test-53-3C873A?style=flat-square">
   <img alt="Sıfır motor kodu" src="https://img.shields.io/badge/motor%20kodu-yok-3C873A?style=flat-square">
-  <img alt="Yayımlanmış sürüm yok" src="https://img.shields.io/badge/sürüm-yayımlanmadı-3B3F46?style=flat-square">
+  <a href="https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2"><img alt="Sürüm v0.1.2" src="https://img.shields.io/badge/sürüm-v0.1.2-3C873A?style=flat-square"></a>
   <a href="LICENSE"><img alt="Apache-2.0 lisansı" src="https://img.shields.io/badge/lisans-Apache--2.0-3B3F46?style=flat-square"></a>
 </p>
 
@@ -51,8 +51,9 @@ makul olarak isteyemez. Bu paket o ortamların ihtiyaç duyduğu veriyi beyan ed
 motor da basar: deterministik, span düzeyinde etiketli ve herkesin
 denetleyebileceği bir manifestoyla mühürlenmiş.
 
-**Sürüm 0.1, ön yayın. Hiçbir sürüm yayımlanmadı ve indirilecek bir referans veri
-kümesi henüz yok.** Bugün doğru olan: `packcheck` sabitlenmiş çekirdeğe karşı
+**Sürüm 0.1.2. İki referans veri kümesi
+[v0.1.2 sürümüne](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2) ekli olarak
+yayımlandı; her biri künyesini ve sağlamalarını taşıyor.** Bugün doğru olan: `packcheck` sabitlenmiş çekirdeğe karşı
 geçiyor, 53 test geçiyor ve değerlendirme tarifi on sekiz kapsam hedefinin
 hepsini tutturuyor.
 
@@ -82,7 +83,8 @@ hepsini tutturuyor.
 ## Kendiniz basın
 
 ```bash
-uv tool install mintmark
+# Motor henüz PyPI'de değil; depodan kurun.
+uv tool install git+https://github.com/lokomotifai/mintmark
 git clone https://github.com/lokomotifai/mintmark-banking
 cd mintmark-banking
 
@@ -233,11 +235,11 @@ koştuğu artefakt kadar iyidir.
 
 ## Proje durumu
 
-Sürüm 0.1, ön yayın. Sürüm yok, yayımlanmış veri kümesi yok. Referans veri
-kümeleri, yerleşik tohumlarıyla birlikte
-[docs/reference-datasets.json](docs/reference-datasets.json) içinde beyan
-edilmiştir; bunları yayımlamak, veri seti lisansını teyit etmekle birlikte bir
-dış yetki kapısıdır.
+Sürüm 0.1.2, yayımlandı. İki referans veri kümesi
+[v0.1.2](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2) sürümüne ekli;
+[docs/reference-datasets.json](docs/reference-datasets.json) içinde bildirilen
+tohumlarla ve güvenli kimlik politikasıyla üretildiler. Motor henüz PyPI'de
+değil, bu yüzden deposundan kurun.
 
 Tohumlar bilerek yerleşiktir. Değişen bir tohum yayımlanmış bir manifestoyu
 sessizce geçersizleştirir, dolayısıyla asla bir kapsam eksiğinin çözümü değildir;
