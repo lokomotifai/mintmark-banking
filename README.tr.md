@@ -101,10 +101,14 @@ temsil etmek yerine derlemeyi düşürür.
 Üretildiği hâliyle bir şikâyet metni:
 
 ```
-Sayin yetkili, Mustafa Çelik adima kayitli hesabimla ilgili bir sorun
-yasiyorum. hesap konusunda defalarca basvurmama ragmen cozum alamadim.
-Kimlik numaram 47327490088, hesabim TR109999906155633316845527. Adresim
-Cumhuriyet.
+Sayin yetkili, Selin Aslan adima kayitli hesabimla ilgili bir
+sorun yasiyorum. hesap konusunda defalarca basvurmama ragmen cozum
+alamadim. Kimlik numaram 91221076808, hesabim
+TR889999905879802200372911. Adresim Gültepe Mahallesi,
+ulasilabilecegim numara +90 506 189 00 15. Konuyla ilgili olarak
+Kuzey Yıldızı Danışmanlık firmasindan gelen otomatik odeme
+talimatinin da iptal edilmesini talep ediyorum. Konunun
+incelenmesini ve tarafima geri donus yapilmasini rica ederim.
 ```
 
 Bu, [`samples/complaint_ticket.jsonl`](samples/complaint_ticket.jsonl) içindeki
