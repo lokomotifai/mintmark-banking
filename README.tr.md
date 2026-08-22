@@ -13,7 +13,6 @@
 
 <p align="center">
   <a href="https://github.com/lokomotifai/mintmark-banking/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/lokomotifai/mintmark-banking/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
-  <img alt="53 test" src="https://img.shields.io/badge/test-53-3C873A?style=flat-square">
   <img alt="Sıfır motor kodu" src="https://img.shields.io/badge/motor%20kodu-yok-3C873A?style=flat-square">
   <a href="https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2"><img alt="Sürüm v0.1.2" src="https://img.shields.io/badge/sürüm-v0.1.2-3C873A?style=flat-square"></a>
   <a href="LICENSE"><img alt="Apache-2.0 lisansı" src="https://img.shields.io/badge/lisans-Apache--2.0-3B3F46?style=flat-square"></a>
@@ -54,7 +53,7 @@ denetleyebileceği bir manifestoyla mühürlenmiş.
 **Sürüm 0.1.2. İki referans veri kümesi
 [v0.1.2 sürümüne](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2) ekli olarak
 yayımlandı; her biri künyesini ve sağlamalarını taşıyor.** Bugün doğru olan: `packcheck` sabitlenmiş çekirdeğe karşı
-geçiyor, 53 test geçiyor ve değerlendirme tarifi on sekiz kapsam hedefinin
+geçiyor, test paketi geçiyor ve değerlendirme tarifi on sekiz kapsam hedefinin
 hepsini tutturuyor.
 
 > [!IMPORTANT]

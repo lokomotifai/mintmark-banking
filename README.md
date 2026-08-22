@@ -13,7 +13,6 @@
 
 <p align="center">
   <a href="https://github.com/lokomotifai/mintmark-banking/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/lokomotifai/mintmark-banking/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
-  <img alt="53 tests" src="https://img.shields.io/badge/tests-53-3C873A?style=flat-square">
   <img alt="Zero engine code" src="https://img.shields.io/badge/engine%20code-none-3C873A?style=flat-square">
   <a href="https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2"><img alt="Release v0.1.2" src="https://img.shields.io/badge/release-v0.1.2-3C873A?style=flat-square"></a>
   <a href="LICENSE"><img alt="Apache-2.0 license" src="https://img.shields.io/badge/license-Apache--2.0-3B3F46?style=flat-square"></a>
@@ -53,7 +52,7 @@ mints it: deterministic, span-labeled, and sealed by a manifest anyone can check
 **Version 0.1.2. Two reference datasets are published as assets on
 [v0.1.2](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2), each
 carrying its own manifest and checksums.** What is true today: `packcheck` passes against
-the pinned core, 53 tests pass, and the evaluation recipe meets every one of its
+the pinned core, the test suite passes, and the evaluation recipe meets every one of its
 eighteen coverage targets.
 
 > [!IMPORTANT]
