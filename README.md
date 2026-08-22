@@ -62,6 +62,9 @@ eighteen coverage targets.
 > evasion guidance of any kind. Generated phone numbers can coincide with
 > assigned ones, because the Turkish numbering plan reserves no fictional range.
 > This data is for testing systems. It is never for contacting anyone.
+> What this
+> does and does not mean under Turkish data protection law is set out in
+> [docs/kvkk.md](docs/kvkk.md).
 
 ## What is in here, and what is not
 
@@ -99,14 +102,13 @@ than quietly misrepresenting them.
 One complaint body, as emitted:
 
 ```
-Sayin yetkili, Selin Aslan adima kayitli hesabimla ilgili bir
-sorun yasiyorum. hesap konusunda defalarca basvurmama ragmen cozum
-alamadim. Kimlik numaram 91221076808, hesabim
-TR889999905879802200372911. Adresim Gültepe Mahallesi,
-ulasilabilecegim numara +90 506 189 00 15. Konuyla ilgili olarak
-Kuzey Yıldızı Danışmanlık firmasindan gelen otomatik odeme
-talimatinin da iptal edilmesini talep ediyorum. Konunun
-incelenmesini ve tarafima geri donus yapilmasini rica ederim.
+Sayin yetkili, Hasan Yılmaz adima kayitli hesabimla ilgili bir
+sorun yasiyorum. kart konusunda defalarca basvurmama ragmen cozum
+alamadim. Kimlik numaram 97978600710, hesabim
+TR379999903250607630343066. Adresim Gültepe Mahallesi,
+ulasilabilecegim numara +90 583 703 41 67. Konunun
+degerlendirilmesini ve tarafima geri donus yapilmasini rica
+ederim.
 ```
 
 That is the first record in [`samples/complaint_ticket.jsonl`](samples/complaint_ticket.jsonl),
@@ -262,7 +264,10 @@ nothing.
 Apache-2.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE). The license grants no
 right to the Mintmark name or logo; see [TRADEMARKS.md](TRADEMARKS.md).
 
-The dataset license for published reference datasets is proposed as CC0-1.0 and
-is pending legal confirmation. Nothing here states it as settled.
+Reference datasets are licensed **CC BY 4.0**: use them for anything, including
+commercially, and credit the source. Every dataset carries its own credit line in
+`MINTMARK.json` and `mintmark verify` prints it, so nothing has to be assembled by
+hand. See [LICENSE-DATASETS.md](LICENSE-DATASETS.md). Pending legal confirmation;
+nothing here states it as settled.
 
 <p align="center"><sub>Part of the Mintmark family: <a href="https://github.com/lokomotifai/mintmark">the engine</a> · <a href="https://github.com/lokomotifai/mintmark-insurance">insurance</a> · <a href="https://github.com/lokomotifai/mintmark-hr">human resources</a></sub></p>

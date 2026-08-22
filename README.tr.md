@@ -63,6 +63,8 @@ hepsini tutturuyor.
 > içermez. Üretilen telefon numaraları atanmış numaralarla çakışabilir, çünkü
 > Türkiye numara planı kurgusal bir aralık ayırmaz. Bu veri sistemleri test etmek
 > içindir. Hiçbir zaman kimseye ulaşmak için değildir.
+> Bunun Türk veri koruma hukuku karşısında ne anlama gelip gelmediği
+> [docs/kvkk.tr.md](docs/kvkk.tr.md) dosyasında açıklanmıştır.
 
 ## Burada ne var, ne yok
 
@@ -101,14 +103,13 @@ temsil etmek yerine derlemeyi düşürür.
 Üretildiği hâliyle bir şikâyet metni:
 
 ```
-Sayin yetkili, Selin Aslan adima kayitli hesabimla ilgili bir
-sorun yasiyorum. hesap konusunda defalarca basvurmama ragmen cozum
-alamadim. Kimlik numaram 91221076808, hesabim
-TR889999905879802200372911. Adresim Gültepe Mahallesi,
-ulasilabilecegim numara +90 506 189 00 15. Konuyla ilgili olarak
-Kuzey Yıldızı Danışmanlık firmasindan gelen otomatik odeme
-talimatinin da iptal edilmesini talep ediyorum. Konunun
-incelenmesini ve tarafima geri donus yapilmasini rica ederim.
+Sayin yetkili, Hasan Yılmaz adima kayitli hesabimla ilgili bir
+sorun yasiyorum. kart konusunda defalarca basvurmama ragmen cozum
+alamadim. Kimlik numaram 97978600710, hesabim
+TR379999903250607630343066. Adresim Gültepe Mahallesi,
+ulasilabilecegim numara +90 583 703 41 67. Konunun
+degerlendirilmesini ve tarafima geri donus yapilmasini rica
+ederim.
 ```
 
 Bu, [`samples/complaint_ticket.jsonl`](samples/complaint_ticket.jsonl) içindeki
@@ -263,8 +264,11 @@ kod çalıştırmayan bir depoda neyin güvenlik açığı sayıldığını kaps
 Apache-2.0. Bakınız [LICENSE](LICENSE) ve [NOTICE](NOTICE). Lisans, Mintmark adı
 veya logosu üzerinde hiçbir hak vermez; bakınız [TRADEMARKS.md](TRADEMARKS.md).
 
-Yayımlanan referans veri kümeleri için veri seti lisansı CC0-1.0 olarak
-önerilmiştir ve hukuk teyidi beklemektedir. Burada hiçbir şey bunu yerleşik
-olarak belirtmez.
+Referans veri kümeleri **CC BY 4.0** ile lisanslıdır: ticari kullanım dahil her
+amaçla kullanabilirsiniz, kaynağı belirtmeniz yeterlidir. Her veri kümesi kendi
+atıf satırını `MINTMARK.json` içinde taşır ve `mintmark verify` bunu yazdırır;
+elle bir şey kurmanız gerekmez. Bakınız
+[LICENSE-DATASETS.md](LICENSE-DATASETS.md). Hukuki teyit beklemektedir; burada
+hiçbir şey bunu yerleşik olarak belirtmez.
 
 <p align="center"><sub>Mintmark ailesinin parçası: <a href="https://github.com/lokomotifai/mintmark">çekirdek</a> · <a href="https://github.com/lokomotifai/mintmark-insurance">sigorta</a> · <a href="https://github.com/lokomotifai/mintmark-hr">insan kaynakları</a></sub></p>

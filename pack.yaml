@@ -1,8 +1,9 @@
 schema_version: 1
 name: mintmark-banking
-version: 0.1.1
+version: 0.1.2
 requires_core: ">=0.1,<0.2"
 locale: tr-TR
 allowed_identifier_policies: [safe, validator]
 description: Synthetic Turkish retail banking records and span-labeled documents.
 description_tr: Sentetik Turkce bireysel bankacilik kayitlari ve etiketli belgeleri.
+dataset_license: CC-BY-4.0
