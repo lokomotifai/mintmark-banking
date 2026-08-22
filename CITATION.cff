@@ -16,7 +16,7 @@ abstract: 'Declaration-and-data pack producing synthetic Turkish retail banking 
   against a pinned eighteen-label taxonomy. Requires the Mintmark engine. Contains no real
   institution, brand, or person, and ingests no real data.'
 type: dataset
-version: 0.1.2
+version: 0.2.0
 authors:
 - family-names: Guner
   given-names: Fatih
