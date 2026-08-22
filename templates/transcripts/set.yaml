@@ -1,0 +1,20 @@
+entries:
+- id: transcript_general
+  weight: '0.5'
+  text: 'Temsilci: Iyi gunler, size nasil yardimci olabilirim? Musteri: {entity:PERSON} ben ariyorum,
+    hesabimla ilgili bir sorum var. Temsilci: Kimlik dogrulamasi icin kimlik numaranizin son haneleri
+    {id:TCKN} seklinde mi? Musteri: Evet dogru. Temsilci: Kayitli numaraniz {id:PHONE}, eposta adresiniz
+    {id:EMAIL} gorunuyor. Musteri: Dogrudur. {id:IBAN} numarali hesabimdan yapilan bir islemi soracaktim.
+    Temsilci: Ilgili islem {field:support_transcript.category} kategorisinde gorunuyor. [?0.5: Musteri:
+    Karta ait son dort hane {id:PAN} olarak gecen kartimdan yapilmis olabilir mi? Temsilci: Kontrol ediyorum.]
+    Temsilci: Kaydinizi olusturdum, (en kisa surede|is gunu icinde) donus yapilacaktir.'
+- id: transcript_with_note
+  weight: '0.5'
+  text: 'Temsilci: Iyi gunler, size nasil yardimci olabilirim? Musteri: {entity:PERSON} ben ariyorum,
+    hesabimla ilgili bir sorum var. Temsilci: Kimlik dogrulamasi icin kimlik numaranizin son haneleri
+    {id:TCKN} seklinde mi? Musteri: Evet dogru. Temsilci: Kayitli numaraniz {id:PHONE}, eposta adresiniz
+    {id:EMAIL} gorunuyor. Musteri: Dogrudur. {id:IBAN} numarali hesabimdan yapilan bir islemi soracaktim.
+    Temsilci: Ilgili islem {field:support_transcript.category} kategorisinde gorunuyor. [?0.5: Musteri:
+    Karta ait son dort hane {id:PAN} olarak gecen kartimdan yapilmis olabilir mi? Temsilci: Kontrol ediyorum.]
+    Temsilci: Kaydinizi olusturdum, (en kisa surede|is gunu icinde) donus yapilacaktir.[?special: Musteri:
+    {entity:HEALTH} nedeniyle subeye gelemedigimi de not alabilir misiniz?]'

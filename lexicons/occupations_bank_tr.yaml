@@ -1,0 +1,24 @@
+name: occupations_bank_tr
+source_note: Occupation declarations as a KYC form records them. Invented.
+values:
+- ogretmen
+- muhendis
+- doktor
+- hemsire
+- avukat
+- muhasebeci
+- teknisyen
+- satis temsilcisi
+- sofor
+- asci
+- kuafor
+- terzi
+- marangoz
+- elektrikci
+- guvenlik gorevlisi
+- memur
+- emekli
+- serbest meslek
+- esnaf
+- ciftci
+- yazilim gelistirici

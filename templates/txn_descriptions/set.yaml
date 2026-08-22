@@ -1,0 +1,13 @@
+entries:
+- id: havale_person
+  weight: '0.30'
+  text: '{entity:PERSON} adina (havale|EFT) gonderimi[?0.4: , aciklama: aylik odeme].'
+- id: transfer_iban
+  weight: '0.25'
+  text: '{id:IBAN} numarali hesaba (transfer|odeme) yapildi.'
+- id: kart_alisveris
+  weight: '0.25'
+  text: '{field:transaction.counterparty_name} isyerinde (kart|temassiz) ile alisveris[?0.3: , taksitli].'
+- id: fatura
+  weight: '0.20'
+  text: Fatura odemesi (tamamlandi|gerceklesti)[?0.35:, referans {id:VKN}].

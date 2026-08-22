@@ -1,0 +1,18 @@
+entries:
+- id: complaint_general
+  weight: '0.55'
+  text: 'Sayin yetkili, {entity:PERSON} adima kayitli hesabimla ilgili bir sorun yasiyorum. {field:complaint_ticket.category}
+    konusunda (defalarca|birkac kez) basvurmama ragmen cozum alamadim. Kimlik numaram {id:TCKN}, hesabim
+    {id:IBAN}. Adresim {entity:ADDRESS}, ulasilabilecegim numara {id:PHONE}. [?0.5: Konuyla ilgili olarak
+    {entity:ORG} firmasindan gelen otomatik odeme talimatinin da iptal edilmesini talep ediyorum.][?0.4:
+    Kurumsal odeme icin verilen vergi numarasi {id:VKN} kaydinin duzeltilmesi gerekiyor.] Konunun (incelenmesini|degerlendirilmesini)
+    ve tarafima geri donus yapilmasini rica ederim.'
+- id: complaint_with_note
+  weight: '0.45'
+  text: 'Sayin yetkili, {entity:PERSON} adima kayitli hesabimla ilgili bir sorun yasiyorum. {field:complaint_ticket.category}
+    konusunda (defalarca|birkac kez) basvurmama ragmen cozum alamadim. Kimlik numaram {id:TCKN}, hesabim
+    {id:IBAN}. Adresim {entity:ADDRESS}, ulasilabilecegim numara {id:PHONE}. [?0.5: Konuyla ilgili olarak
+    {entity:ORG} firmasindan gelen otomatik odeme talimatinin da iptal edilmesini talep ediyorum.][?0.4:
+    Kurumsal odeme icin verilen vergi numarasi {id:VKN} kaydinin duzeltilmesi gerekiyor.] Konunun (incelenmesini|degerlendirilmesini)
+    ve tarafima geri donus yapilmasini rica ederim.[?special: Ayrica {entity:HEALTH} nedeniyle sube ziyareti
+    yapamadigimi belirtmek isterim.]'

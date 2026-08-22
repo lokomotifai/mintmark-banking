@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500" role="img"
+     aria-label="Diagram of the banking pack's record types. Four structured types across the top: customer carrying person name, national identity number, date of birth, email, phone and address; account, one to three per customer, carrying an IBAN and a balance in kurus; card, zero to two per account, carrying an always-masked card number; and transaction, many per account, carrying an IBAN, an organization and a short document field. Three document types below, drawn in red because each produces a label sidecar: complaint ticket of eighty to two hundred words, KYC note which is the pack's main tax number surface, and support transcript with alternating turns whose partial identifiers are labeled with their parent label.">
+  <title>What the banking pack emits</title>
+  <desc>Four structured record types and three document types, with cardinalities stated on each card.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FBFAF8" fill-opacity="0.3"/>
+    </marker>
+  </defs>
+    <rect width="1200" height="500" fill="#111111"/>
+  <text x="36" y="44" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="21" font-weight="600" fill="#FBFAF8" fill-opacity="0.95">What this pack emits</text>
+  <text x="36" y="68" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13.5" fill="#FBFAF8" fill-opacity="0.5">Four structured types and three document types. The labels live where the free text is.</text>
+  <rect x="36" y="96" width="246" height="118" rx="13" fill="#17191F" stroke="#FBFAF8" stroke-opacity="0.22" stroke-width="1.5"/>
+  <text x="52" y="123" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#FBFAF8" fill-opacity="0.95">customer</text>
+  <text x="52" y="141" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#FBFAF8" fill-opacity="0.45">CUST</text>
+  <text x="52" y="164" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#FBFAF8" fill-opacity="0.6">PERSON, TCKN, DOB</text>
+  <text x="52" y="182" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#FBFAF8" fill-opacity="0.6">EMAIL, PHONE, ADDRESS</text>
+  <rect x="330" y="96" width="246" height="118" rx="13" fill="#17191F" stroke="#FBFAF8" stroke-opacity="0.22" stroke-width="1.5"/>
+  <text x="346" y="123" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#FBFAF8" fill-opacity="0.95">account</text>
+  <text x="346" y="141" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#FBFAF8" fill-opacity="0.45">ACC  ·  1..3 per customer</text>
+  <text x="346" y="164" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#FBFAF8" fill-opacity="0.6">IBAN</text>
+  <text x="346" y="182" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#FBFAF8" fill-opacity="0.6">balance in kurus</text>
+  <rect x="624" y="96" width="246" height="118" rx="13" fill="#17191F" stroke="#FBFAF8" stroke-opacity="0.22" stroke-width="1.5"/>
+  <text x="640" y="123" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#FBFAF8" fill-opacity="0.95">card</text>
+  <text x="640" y="141" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#FBFAF8" fill-opacity="0.45">CARD  ·  0..2 per account</text>
+  <text x="640" y="164" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#FBFAF8" fill-opacity="0.6">PAN, always masked</text>
+  <rect x="918" y="96" width="246" height="118" rx="13" fill="#17191F" stroke="#FBFAF8" stroke-opacity="0.22" stroke-width="1.5"/>
+  <text x="934" y="123" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#FBFAF8" fill-opacity="0.95">transaction</text>
+  <text x="934" y="141" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#FBFAF8" fill-opacity="0.45">TXN  ·  many per account</text>
+  <text x="934" y="164" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#FBFAF8" fill-opacity="0.6">IBAN, ORG</text>
+  <text x="934" y="182" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#FBFAF8" fill-opacity="0.6">a short document field</text>
+  <rect x="36" y="282" width="340" height="136" rx="13" fill="#17191F" stroke="#D11F26" stroke-opacity="0.55" stroke-width="1.5"/>
+  <text x="52" y="309" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#D11F26" fill-opacity="0.95">complaint_ticket</text>
+  <text x="52" y="327" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#FBFAF8" fill-opacity="0.45">CMP  ·  80 to 200 words</text>
+  <text x="52" y="350" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#FBFAF8" fill-opacity="0.6">PERSON, ADDRESS, ORG</text>
+  <text x="52" y="368" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#FBFAF8" fill-opacity="0.6">TCKN, IBAN, PHONE, VKN</text>
+  <text x="52" y="386" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#FBFAF8" fill-opacity="0.6">a special category at the rate</text>
+  <rect x="430" y="282" width="340" height="136" rx="13" fill="#17191F" stroke="#D11F26" stroke-opacity="0.55" stroke-width="1.5"/>
+  <text x="446" y="309" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#D11F26" fill-opacity="0.95">kyc_note</text>
+  <text x="446" y="327" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#FBFAF8" fill-opacity="0.45">KYC  ·  advisor free text</text>
+  <text x="446" y="350" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#FBFAF8" fill-opacity="0.6">occupation, income narrative</text>
+  <text x="446" y="368" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#FBFAF8" fill-opacity="0.6">source of funds, address</text>
+  <text x="446" y="386" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#FBFAF8" fill-opacity="0.6">the pack's main VKN surface</text>
+  <rect x="824" y="282" width="340" height="136" rx="13" fill="#17191F" stroke="#D11F26" stroke-opacity="0.55" stroke-width="1.5"/>
+  <text x="840" y="309" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#D11F26" fill-opacity="0.95">support_transcript</text>
+  <text x="840" y="327" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" fill="#FBFAF8" fill-opacity="0.45">TRN  ·  alternating turns</text>
+  <text x="840" y="350" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#FBFAF8" fill-opacity="0.6">verification patterns</text>
+  <text x="840" y="368" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#FBFAF8" fill-opacity="0.6">partial identifiers labeled</text>
+  <text x="840" y="386" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#FBFAF8" fill-opacity="0.6">with their parent label</text>
+  <path d="M 159 214 L 159 282" fill="none" stroke="#FBFAF8" stroke-opacity="0.3" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="36" y="452" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#FBFAF8" fill-opacity="0.42">Every red box produces a label sidecar. A structured field carries one label; document text carries a span per surface, recorded as the surface is placed.</text>
+</svg>

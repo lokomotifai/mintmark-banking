@@ -1,0 +1,31 @@
+name: banks_fictional
+source_note: Invented bank names on the place-and-nature pattern. No source register. Every entry
+  is scanned against the core's real-institution denylist in required CI, and a hit fails the
+  build naming both sides of the collision.
+values:
+- Anka Bank
+- Meridyen Bank
+- Toros Katilim
+- Ilgaz Bank
+- Pusula Bank
+- Safak Bank
+- Bereket Katilim
+- Kuzey Yildizi Bank
+- Marmara Bank
+- Ege Kiyi Bank
+- Cinar Bank
+- Deniz Kum Bank
+- Yelken Bank
+- Zirve Bank
+- Ufuk Katilim
+- Kervan Bank
+- Aliseyh Bank
+- Gokce Bank
+- Karadeniz Kiyi Bank
+- Efe Bank
+- Tuna Bank
+- Selale Bank
+- Firtina Bank
+- Ada Bank
+- Nilufer Bank
+- Serhat Katilim

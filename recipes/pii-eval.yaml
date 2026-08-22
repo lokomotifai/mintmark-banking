@@ -1,0 +1,42 @@
+schema_version: 1
+name: pii-eval
+records:
+  customer: 900
+  account: 900
+  card: 400
+  transaction: 900
+  complaint_ticket: 0
+  kyc_note: 0
+  support_transcript: 0
+  complaint_ticket_eval: 800
+  kyc_note_eval: 600
+  support_transcript_eval: 600
+date_window:
+  start: "2026-01-01T00:00:00+00:00"
+  end: "2026-12-31T23:59:59+00:00"
+doc_mix:
+  complaints_eval: "0.4"
+  kyc_notes_eval: "0.3"
+  transcripts_eval: "0.3"
+  txn_descriptions: "1"
+special_rate: "1"
+coverage_targets:
+  PERSON: 300
+  ADDRESS: 300
+  ORG: 300
+  DOB: 300
+  HEALTH: 300
+  RELIGION: 300
+  ETHNICITY: 300
+  POLITICAL: 300
+  SEXUAL_LIFE: 300
+  CRIMINAL: 300
+  BIOMETRIC_REF: 300
+  UNION: 300
+  TCKN: 500
+  VKN: 500
+  IBAN: 500
+  PAN: 500
+  PHONE: 500
+  EMAIL: 500
+identifier_policy: safe

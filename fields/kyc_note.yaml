@@ -1,0 +1,34 @@
+schema_version: 1
+type_name: kyc_note
+id_prefix: KYC
+order: 6
+fields:
+  - {name: kyc_note_id, type: str, generator: seq_id, pii_label: none}
+  - name: customer_id
+    type: ref
+    generator: seq_id
+    ref: {parent: customer, counts: [0, 1], weights: ["0.7", "0.3"]}
+    pii_label: none
+  - name: channel
+    type: enum
+    generator: enum_weighted
+    params:
+      values: [cagri_merkezi, sube, mobil, eposta]
+      weights: ["0.40", "0.25", "0.25", "0.10"]
+    pii_label: none
+  - name: category
+    type: enum
+    generator: enum_weighted
+    params:
+      values: [kart, kredi, hesap, sube, dijital]
+      weights: ["0.30", "0.22", "0.24", "0.12", "0.12"]
+    pii_label: none
+  - {name: created_ts, type: datetime, generator: datetime_window, pii_label: none}
+  - name: resolution_status
+    type: enum
+    generator: enum_weighted
+    params:
+      values: [cozuldu, incelemede, yonlendirildi]
+      weights: ["0.62", "0.25", "0.13"]
+    pii_label: none
+  - {name: body, type: doc, generator: "grammar:kyc_notes", pii_label: none}

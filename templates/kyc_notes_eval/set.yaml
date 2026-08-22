@@ -1,0 +1,57 @@
+entries:
+- id: eval_health_religion
+  weight: '1'
+  text: 'Musteri gorusmesi notu. Basvuru sahibi {entity:PERSON}, kimlik {id:TCKN}, dogum tarihi {entity:DOB}.
+    Adres {entity:ADDRESS}, telefon {id:PHONE}, eposta {id:EMAIL}. Hesap {id:IBAN} olarak acildi, kart
+    {id:PAN} olarak tanimlandi. Isyeri {entity:ORG}, kurumsal vergi numarasi {id:VKN}. [?special: Gorusmede
+    {entity:HEALTH} beyani alindi.] [?special: Dosyaya {entity:RELIGION} notu eklendi.] Belgeler eksiksiz
+    olarak teslim alindi.'
+- id: eval_union_ethnicity
+  weight: '1'
+  text: 'Musteri gorusmesi notu. Basvuru sahibi {entity:PERSON}, kimlik {id:TCKN}, dogum tarihi {entity:DOB}.
+    Adres {entity:ADDRESS}, telefon {id:PHONE}, eposta {id:EMAIL}. Hesap {id:IBAN} olarak acildi, kart
+    {id:PAN} olarak tanimlandi. Isyeri {entity:ORG}, kurumsal vergi numarasi {id:VKN}. [?special: Gorusmede
+    {entity:UNION} beyani alindi.] [?special: Dosyaya {entity:ETHNICITY} notu eklendi.] Belgeler eksiksiz
+    olarak teslim alindi.'
+- id: eval_political_criminal
+  weight: '1'
+  text: 'Musteri gorusmesi notu. Basvuru sahibi {entity:PERSON}, kimlik {id:TCKN}, dogum tarihi {entity:DOB}.
+    Adres {entity:ADDRESS}, telefon {id:PHONE}, eposta {id:EMAIL}. Hesap {id:IBAN} olarak acildi, kart
+    {id:PAN} olarak tanimlandi. Isyeri {entity:ORG}, kurumsal vergi numarasi {id:VKN}. [?special: Gorusmede
+    {entity:POLITICAL} beyani alindi.] [?special: Dosyaya {entity:CRIMINAL} notu eklendi.] Belgeler eksiksiz
+    olarak teslim alindi.'
+- id: eval_religion_biometric_ref
+  weight: '1'
+  text: 'Musteri gorusmesi notu. Basvuru sahibi {entity:PERSON}, kimlik {id:TCKN}, dogum tarihi {entity:DOB}.
+    Adres {entity:ADDRESS}, telefon {id:PHONE}, eposta {id:EMAIL}. Hesap {id:IBAN} olarak acildi, kart
+    {id:PAN} olarak tanimlandi. Isyeri {entity:ORG}, kurumsal vergi numarasi {id:VKN}. [?special: Gorusmede
+    {entity:RELIGION} beyani alindi.] [?special: Dosyaya {entity:BIOMETRIC_REF} notu eklendi.] Belgeler
+    eksiksiz olarak teslim alindi.'
+- id: eval_ethnicity_sexual_life
+  weight: '1'
+  text: 'Musteri gorusmesi notu. Basvuru sahibi {entity:PERSON}, kimlik {id:TCKN}, dogum tarihi {entity:DOB}.
+    Adres {entity:ADDRESS}, telefon {id:PHONE}, eposta {id:EMAIL}. Hesap {id:IBAN} olarak acildi, kart
+    {id:PAN} olarak tanimlandi. Isyeri {entity:ORG}, kurumsal vergi numarasi {id:VKN}. [?special: Gorusmede
+    {entity:ETHNICITY} beyani alindi.] [?special: Dosyaya {entity:SEXUAL_LIFE} notu eklendi.] Belgeler
+    eksiksiz olarak teslim alindi.'
+- id: eval_criminal_health
+  weight: '1'
+  text: 'Musteri gorusmesi notu. Basvuru sahibi {entity:PERSON}, kimlik {id:TCKN}, dogum tarihi {entity:DOB}.
+    Adres {entity:ADDRESS}, telefon {id:PHONE}, eposta {id:EMAIL}. Hesap {id:IBAN} olarak acildi, kart
+    {id:PAN} olarak tanimlandi. Isyeri {entity:ORG}, kurumsal vergi numarasi {id:VKN}. [?special: Gorusmede
+    {entity:CRIMINAL} beyani alindi.] [?special: Dosyaya {entity:HEALTH} notu eklendi.] Belgeler eksiksiz
+    olarak teslim alindi.'
+- id: eval_biometric_ref_union
+  weight: '1'
+  text: 'Musteri gorusmesi notu. Basvuru sahibi {entity:PERSON}, kimlik {id:TCKN}, dogum tarihi {entity:DOB}.
+    Adres {entity:ADDRESS}, telefon {id:PHONE}, eposta {id:EMAIL}. Hesap {id:IBAN} olarak acildi, kart
+    {id:PAN} olarak tanimlandi. Isyeri {entity:ORG}, kurumsal vergi numarasi {id:VKN}. [?special: Gorusmede
+    {entity:BIOMETRIC_REF} beyani alindi.] [?special: Dosyaya {entity:UNION} notu eklendi.] Belgeler eksiksiz
+    olarak teslim alindi.'
+- id: eval_sexual_life_political
+  weight: '1'
+  text: 'Musteri gorusmesi notu. Basvuru sahibi {entity:PERSON}, kimlik {id:TCKN}, dogum tarihi {entity:DOB}.
+    Adres {entity:ADDRESS}, telefon {id:PHONE}, eposta {id:EMAIL}. Hesap {id:IBAN} olarak acildi, kart
+    {id:PAN} olarak tanimlandi. Isyeri {entity:ORG}, kurumsal vergi numarasi {id:VKN}. [?special: Gorusmede
+    {entity:SEXUAL_LIFE} beyani alindi.] [?special: Dosyaya {entity:POLITICAL} notu eklendi.] Belgeler
+    eksiksiz olarak teslim alindi.'

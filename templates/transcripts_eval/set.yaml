@@ -1,0 +1,65 @@
+entries:
+- id: eval_health_religion
+  weight: '1'
+  text: 'Temsilci: Iyi gunler. Musteri: {entity:PERSON} ben ariyorum. Temsilci: Kimlik dogrulamasi icin
+    {id:TCKN}, dogum tarihi {entity:DOB} dogru mu? Musteri: Evet. Adresim {entity:ADDRESS}, telefonum
+    {id:PHONE}, epostam {id:EMAIL}. Temsilci: {id:IBAN} hesabiniz ve {id:PAN} kartiniz gorunuyor. Musteri:
+    Odeme {entity:ORG} firmasina, vergi numarasi {id:VKN} idi. [?special: Musteri: {entity:HEALTH} durumumu
+    da kayda gecirir misiniz?] [?special: Temsilci: {entity:RELIGION} notunu dosyaniza ekledim.] Temsilci:
+    Kaydiniz olusturuldu.'
+- id: eval_union_ethnicity
+  weight: '1'
+  text: 'Temsilci: Iyi gunler. Musteri: {entity:PERSON} ben ariyorum. Temsilci: Kimlik dogrulamasi icin
+    {id:TCKN}, dogum tarihi {entity:DOB} dogru mu? Musteri: Evet. Adresim {entity:ADDRESS}, telefonum
+    {id:PHONE}, epostam {id:EMAIL}. Temsilci: {id:IBAN} hesabiniz ve {id:PAN} kartiniz gorunuyor. Musteri:
+    Odeme {entity:ORG} firmasina, vergi numarasi {id:VKN} idi. [?special: Musteri: {entity:UNION} durumumu
+    da kayda gecirir misiniz?] [?special: Temsilci: {entity:ETHNICITY} notunu dosyaniza ekledim.] Temsilci:
+    Kaydiniz olusturuldu.'
+- id: eval_political_criminal
+  weight: '1'
+  text: 'Temsilci: Iyi gunler. Musteri: {entity:PERSON} ben ariyorum. Temsilci: Kimlik dogrulamasi icin
+    {id:TCKN}, dogum tarihi {entity:DOB} dogru mu? Musteri: Evet. Adresim {entity:ADDRESS}, telefonum
+    {id:PHONE}, epostam {id:EMAIL}. Temsilci: {id:IBAN} hesabiniz ve {id:PAN} kartiniz gorunuyor. Musteri:
+    Odeme {entity:ORG} firmasina, vergi numarasi {id:VKN} idi. [?special: Musteri: {entity:POLITICAL}
+    durumumu da kayda gecirir misiniz?] [?special: Temsilci: {entity:CRIMINAL} notunu dosyaniza ekledim.]
+    Temsilci: Kaydiniz olusturuldu.'
+- id: eval_religion_biometric_ref
+  weight: '1'
+  text: 'Temsilci: Iyi gunler. Musteri: {entity:PERSON} ben ariyorum. Temsilci: Kimlik dogrulamasi icin
+    {id:TCKN}, dogum tarihi {entity:DOB} dogru mu? Musteri: Evet. Adresim {entity:ADDRESS}, telefonum
+    {id:PHONE}, epostam {id:EMAIL}. Temsilci: {id:IBAN} hesabiniz ve {id:PAN} kartiniz gorunuyor. Musteri:
+    Odeme {entity:ORG} firmasina, vergi numarasi {id:VKN} idi. [?special: Musteri: {entity:RELIGION} durumumu
+    da kayda gecirir misiniz?] [?special: Temsilci: {entity:BIOMETRIC_REF} notunu dosyaniza ekledim.]
+    Temsilci: Kaydiniz olusturuldu.'
+- id: eval_ethnicity_sexual_life
+  weight: '1'
+  text: 'Temsilci: Iyi gunler. Musteri: {entity:PERSON} ben ariyorum. Temsilci: Kimlik dogrulamasi icin
+    {id:TCKN}, dogum tarihi {entity:DOB} dogru mu? Musteri: Evet. Adresim {entity:ADDRESS}, telefonum
+    {id:PHONE}, epostam {id:EMAIL}. Temsilci: {id:IBAN} hesabiniz ve {id:PAN} kartiniz gorunuyor. Musteri:
+    Odeme {entity:ORG} firmasina, vergi numarasi {id:VKN} idi. [?special: Musteri: {entity:ETHNICITY}
+    durumumu da kayda gecirir misiniz?] [?special: Temsilci: {entity:SEXUAL_LIFE} notunu dosyaniza ekledim.]
+    Temsilci: Kaydiniz olusturuldu.'
+- id: eval_criminal_health
+  weight: '1'
+  text: 'Temsilci: Iyi gunler. Musteri: {entity:PERSON} ben ariyorum. Temsilci: Kimlik dogrulamasi icin
+    {id:TCKN}, dogum tarihi {entity:DOB} dogru mu? Musteri: Evet. Adresim {entity:ADDRESS}, telefonum
+    {id:PHONE}, epostam {id:EMAIL}. Temsilci: {id:IBAN} hesabiniz ve {id:PAN} kartiniz gorunuyor. Musteri:
+    Odeme {entity:ORG} firmasina, vergi numarasi {id:VKN} idi. [?special: Musteri: {entity:CRIMINAL} durumumu
+    da kayda gecirir misiniz?] [?special: Temsilci: {entity:HEALTH} notunu dosyaniza ekledim.] Temsilci:
+    Kaydiniz olusturuldu.'
+- id: eval_biometric_ref_union
+  weight: '1'
+  text: 'Temsilci: Iyi gunler. Musteri: {entity:PERSON} ben ariyorum. Temsilci: Kimlik dogrulamasi icin
+    {id:TCKN}, dogum tarihi {entity:DOB} dogru mu? Musteri: Evet. Adresim {entity:ADDRESS}, telefonum
+    {id:PHONE}, epostam {id:EMAIL}. Temsilci: {id:IBAN} hesabiniz ve {id:PAN} kartiniz gorunuyor. Musteri:
+    Odeme {entity:ORG} firmasina, vergi numarasi {id:VKN} idi. [?special: Musteri: {entity:BIOMETRIC_REF}
+    durumumu da kayda gecirir misiniz?] [?special: Temsilci: {entity:UNION} notunu dosyaniza ekledim.]
+    Temsilci: Kaydiniz olusturuldu.'
+- id: eval_sexual_life_political
+  weight: '1'
+  text: 'Temsilci: Iyi gunler. Musteri: {entity:PERSON} ben ariyorum. Temsilci: Kimlik dogrulamasi icin
+    {id:TCKN}, dogum tarihi {entity:DOB} dogru mu? Musteri: Evet. Adresim {entity:ADDRESS}, telefonum
+    {id:PHONE}, epostam {id:EMAIL}. Temsilci: {id:IBAN} hesabiniz ve {id:PAN} kartiniz gorunuyor. Musteri:
+    Odeme {entity:ORG} firmasina, vergi numarasi {id:VKN} idi. [?special: Musteri: {entity:SEXUAL_LIFE}
+    durumumu da kayda gecirir misiniz?] [?special: Temsilci: {entity:POLITICAL} notunu dosyaniza ekledim.]
+    Temsilci: Kaydiniz olusturuldu.'

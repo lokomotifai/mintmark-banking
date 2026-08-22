@@ -1,0 +1,13 @@
+name: complaint_topics_tr
+source_note: Complaint subjects in neutral register. Invented.
+values:
+- kart aidati
+- hesap isletim ucreti
+- kredi basvurusu
+- mobil uygulama hatasi
+- sube yogunlugu
+- otomatik odeme talimati
+- limit guncellemesi
+- ekstre uyusmazligi
+- para transferi gecikmesi
+- sifre yenileme
