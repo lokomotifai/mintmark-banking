@@ -1,105 +1,70 @@
 entries:
 - id: eval_health_religion
   weight: '1'
-  text: '(Sikayet kaydi.|Musteri sikayeti kaydi.|Cagri merkezi sikayet formu.|Sube uzerinden acilan kayit.)
-    (Sikayet sahibi|Basvuran|Musteri) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
-    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. (Konu|Sikayet
-    konusu|Basvuru konusu) {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
-    [?0.6:(Adres|Kayitli adres) {entity:ADDRESS}. ][?0.75:(Iletisim|Telefon) {id:PHONE}[?0.6:,
-    (eposta|e-posta) {id:EMAIL}]. ](Hesap|Iade hesabi|Bildirilen hesap) {id:IBAN} (olarak kayitli|olarak
-    bildirildi).[?0.4: (Kart|Islem karti) {id:PAN}.][?0.6: (Isyeri|Ilgili kurum|Karsi taraf)
-    {entity:ORG}[?0.55:, (vergi numarasi|vergi kimlik numarasi) {id:VKN}].][?special:
-    (Gorusmede|Basvuruda) {entity:HEALTH} beyani alindi.][?special: (Ayrica|Dosyaya) {entity:RELIGION}
-    notu eklendi.] (Kayit acildi.|Sikayet ilgili birime iletildi.|Basvuru kayda alindi.|Dosya
-    olusturuldu.)'
+  text: '(Sikayet kaydi.|Musteri sikayeti kaydi.)
+    Sikayet sahibi {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    kimlik {id:TCKN}[?0.7:, dogum tarihi {entity:DOB}]. Konu {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
+    [?0.6:Adres {entity:ADDRESS}. ][?0.75:Iletisim {id:PHONE}, eposta {id:EMAIL}. ]Hesap {id:IBAN} olarak kayitli.[?0.4: Kart {id:PAN}.][?0.6: Isyeri {entity:ORG}, vergi numarasi {id:VKN}.][?special:
+    Gorusmede {entity:HEALTH} beyani alindi.][?special: Ayrica {entity:RELIGION}
+    notu eklendi.] (Kayit acildi.|Basvuru kayda alindi.)'
 - id: eval_union_ethnicity
   weight: '1'
-  text: '(Sikayet kaydi.|Musteri sikayeti kaydi.|Cagri merkezi sikayet formu.|Sube uzerinden acilan kayit.)
-    (Sikayet sahibi|Basvuran|Musteri) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
-    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. (Konu|Sikayet
-    konusu|Basvuru konusu) {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
-    [?0.6:(Adres|Kayitli adres) {entity:ADDRESS}. ][?0.75:(Iletisim|Telefon) {id:PHONE}[?0.6:,
-    (eposta|e-posta) {id:EMAIL}]. ](Hesap|Iade hesabi|Bildirilen hesap) {id:IBAN} (olarak kayitli|olarak
-    bildirildi).[?0.4: (Kart|Islem karti) {id:PAN}.][?0.6: (Isyeri|Ilgili kurum|Karsi taraf)
-    {entity:ORG}[?0.55:, (vergi numarasi|vergi kimlik numarasi) {id:VKN}].][?special:
-    (Gorusmede|Basvuruda) {entity:UNION} beyani alindi.][?special: (Ayrica|Dosyaya) {entity:ETHNICITY}
-    notu eklendi.] (Kayit acildi.|Sikayet ilgili birime iletildi.|Basvuru kayda alindi.|Dosya
-    olusturuldu.)'
+  text: '(Sikayet kaydi.|Musteri sikayeti kaydi.)
+    Sikayet sahibi {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    kimlik {id:TCKN}[?0.7:, dogum tarihi {entity:DOB}]. Konu {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
+    [?0.6:Adres {entity:ADDRESS}. ][?0.75:Iletisim {id:PHONE}, eposta {id:EMAIL}. ]Hesap {id:IBAN} olarak kayitli.[?0.4: Kart {id:PAN}.][?0.6: Isyeri {entity:ORG}, vergi numarasi {id:VKN}.][?special:
+    Gorusmede {entity:UNION} beyani alindi.][?special: Ayrica {entity:ETHNICITY}
+    notu eklendi.] (Kayit acildi.|Basvuru kayda alindi.)'
 - id: eval_political_criminal
   weight: '1'
-  text: '(Sikayet kaydi.|Musteri sikayeti kaydi.|Cagri merkezi sikayet formu.|Sube uzerinden acilan kayit.)
-    (Sikayet sahibi|Basvuran|Musteri) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
-    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. (Konu|Sikayet
-    konusu|Basvuru konusu) {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
-    [?0.6:(Adres|Kayitli adres) {entity:ADDRESS}. ][?0.75:(Iletisim|Telefon) {id:PHONE}[?0.6:,
-    (eposta|e-posta) {id:EMAIL}]. ](Hesap|Iade hesabi|Bildirilen hesap) {id:IBAN} (olarak kayitli|olarak
-    bildirildi).[?0.4: (Kart|Islem karti) {id:PAN}.][?0.6: (Isyeri|Ilgili kurum|Karsi taraf)
-    {entity:ORG}[?0.55:, (vergi numarasi|vergi kimlik numarasi) {id:VKN}].][?special:
-    (Gorusmede|Basvuruda) {entity:POLITICAL} beyani alindi.][?special: (Ayrica|Dosyaya)
+  text: '(Sikayet kaydi.|Musteri sikayeti kaydi.)
+    Sikayet sahibi {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    kimlik {id:TCKN}[?0.7:, dogum tarihi {entity:DOB}]. Konu {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
+    [?0.6:Adres {entity:ADDRESS}. ][?0.75:Iletisim {id:PHONE}, eposta {id:EMAIL}. ]Hesap {id:IBAN} olarak kayitli.[?0.4: Kart {id:PAN}.][?0.6: Isyeri {entity:ORG}, vergi numarasi {id:VKN}.][?special:
+    Gorusmede {entity:POLITICAL} beyani alindi.][?special: Ayrica
     {entity:CRIMINAL} notu eklendi.] (Kayit acildi.|Sikayet ilgili birime iletildi.|Basvuru kayda
     alindi.|Dosya olusturuldu.)'
 - id: eval_religion_biometric_ref
   weight: '1'
-  text: '(Sikayet kaydi.|Musteri sikayeti kaydi.|Cagri merkezi sikayet formu.|Sube uzerinden acilan kayit.)
-    (Sikayet sahibi|Basvuran|Musteri) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
-    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. (Konu|Sikayet
-    konusu|Basvuru konusu) {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
-    [?0.6:(Adres|Kayitli adres) {entity:ADDRESS}. ][?0.75:(Iletisim|Telefon) {id:PHONE}[?0.6:,
-    (eposta|e-posta) {id:EMAIL}]. ](Hesap|Iade hesabi|Bildirilen hesap) {id:IBAN} (olarak kayitli|olarak
-    bildirildi).[?0.4: (Kart|Islem karti) {id:PAN}.][?0.6: (Isyeri|Ilgili kurum|Karsi taraf)
-    {entity:ORG}[?0.55:, (vergi numarasi|vergi kimlik numarasi) {id:VKN}].][?special:
-    (Gorusmede|Basvuruda) {entity:RELIGION} beyani alindi.][?special: (Ayrica|Dosyaya)
+  text: '(Sikayet kaydi.|Musteri sikayeti kaydi.)
+    Sikayet sahibi {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    kimlik {id:TCKN}[?0.7:, dogum tarihi {entity:DOB}]. Konu {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
+    [?0.6:Adres {entity:ADDRESS}. ][?0.75:Iletisim {id:PHONE}, eposta {id:EMAIL}. ]Hesap {id:IBAN} olarak kayitli.[?0.4: Kart {id:PAN}.][?0.6: Isyeri {entity:ORG}, vergi numarasi {id:VKN}.][?special:
+    Gorusmede {entity:RELIGION} beyani alindi.][?special: Ayrica
     {entity:BIOMETRIC_REF} notu eklendi.] (Kayit acildi.|Sikayet ilgili birime iletildi.|Basvuru kayda
     alindi.|Dosya olusturuldu.)'
 - id: eval_ethnicity_sexual_life
   weight: '1'
-  text: '(Sikayet kaydi.|Musteri sikayeti kaydi.|Cagri merkezi sikayet formu.|Sube uzerinden acilan kayit.)
-    (Sikayet sahibi|Basvuran|Musteri) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
-    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. (Konu|Sikayet
-    konusu|Basvuru konusu) {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
-    [?0.6:(Adres|Kayitli adres) {entity:ADDRESS}. ][?0.75:(Iletisim|Telefon) {id:PHONE}[?0.6:,
-    (eposta|e-posta) {id:EMAIL}]. ](Hesap|Iade hesabi|Bildirilen hesap) {id:IBAN} (olarak kayitli|olarak
-    bildirildi).[?0.4: (Kart|Islem karti) {id:PAN}.][?0.6: (Isyeri|Ilgili kurum|Karsi taraf)
-    {entity:ORG}[?0.55:, (vergi numarasi|vergi kimlik numarasi) {id:VKN}].][?special:
-    (Gorusmede|Basvuruda) {entity:ETHNICITY} beyani alindi.][?special: (Ayrica|Dosyaya)
+  text: '(Sikayet kaydi.|Musteri sikayeti kaydi.)
+    Sikayet sahibi {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    kimlik {id:TCKN}[?0.7:, dogum tarihi {entity:DOB}]. Konu {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
+    [?0.6:Adres {entity:ADDRESS}. ][?0.75:Iletisim {id:PHONE}, eposta {id:EMAIL}. ]Hesap {id:IBAN} olarak kayitli.[?0.4: Kart {id:PAN}.][?0.6: Isyeri {entity:ORG}, vergi numarasi {id:VKN}.][?special:
+    Gorusmede {entity:ETHNICITY} beyani alindi.][?special: Ayrica
     {entity:SEXUAL_LIFE} notu eklendi.] (Kayit acildi.|Sikayet ilgili birime iletildi.|Basvuru kayda
     alindi.|Dosya olusturuldu.)'
 - id: eval_criminal_health
   weight: '1'
-  text: '(Sikayet kaydi.|Musteri sikayeti kaydi.|Cagri merkezi sikayet formu.|Sube uzerinden acilan kayit.)
-    (Sikayet sahibi|Basvuran|Musteri) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
-    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. (Konu|Sikayet
-    konusu|Basvuru konusu) {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
-    [?0.6:(Adres|Kayitli adres) {entity:ADDRESS}. ][?0.75:(Iletisim|Telefon) {id:PHONE}[?0.6:,
-    (eposta|e-posta) {id:EMAIL}]. ](Hesap|Iade hesabi|Bildirilen hesap) {id:IBAN} (olarak kayitli|olarak
-    bildirildi).[?0.4: (Kart|Islem karti) {id:PAN}.][?0.6: (Isyeri|Ilgili kurum|Karsi taraf)
-    {entity:ORG}[?0.55:, (vergi numarasi|vergi kimlik numarasi) {id:VKN}].][?special:
-    (Gorusmede|Basvuruda) {entity:CRIMINAL} beyani alindi.][?special: (Ayrica|Dosyaya) {entity:HEALTH}
-    notu eklendi.] (Kayit acildi.|Sikayet ilgili birime iletildi.|Basvuru kayda alindi.|Dosya
-    olusturuldu.)'
+  text: '(Sikayet kaydi.|Musteri sikayeti kaydi.)
+    Sikayet sahibi {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    kimlik {id:TCKN}[?0.7:, dogum tarihi {entity:DOB}]. Konu {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
+    [?0.6:Adres {entity:ADDRESS}. ][?0.75:Iletisim {id:PHONE}, eposta {id:EMAIL}. ]Hesap {id:IBAN} olarak kayitli.[?0.4: Kart {id:PAN}.][?0.6: Isyeri {entity:ORG}, vergi numarasi {id:VKN}.][?special:
+    Gorusmede {entity:CRIMINAL} beyani alindi.][?special: Ayrica {entity:HEALTH}
+    notu eklendi.] (Kayit acildi.|Basvuru kayda alindi.)'
 - id: eval_biometric_ref_union
   weight: '1'
-  text: '(Sikayet kaydi.|Musteri sikayeti kaydi.|Cagri merkezi sikayet formu.|Sube uzerinden acilan kayit.)
-    (Sikayet sahibi|Basvuran|Musteri) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
-    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. (Konu|Sikayet
-    konusu|Basvuru konusu) {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
-    [?0.6:(Adres|Kayitli adres) {entity:ADDRESS}. ][?0.75:(Iletisim|Telefon) {id:PHONE}[?0.6:,
-    (eposta|e-posta) {id:EMAIL}]. ](Hesap|Iade hesabi|Bildirilen hesap) {id:IBAN} (olarak kayitli|olarak
-    bildirildi).[?0.4: (Kart|Islem karti) {id:PAN}.][?0.6: (Isyeri|Ilgili kurum|Karsi taraf)
-    {entity:ORG}[?0.55:, (vergi numarasi|vergi kimlik numarasi) {id:VKN}].][?special:
-    (Gorusmede|Basvuruda) {entity:BIOMETRIC_REF} beyani alindi.][?special: (Ayrica|Dosyaya)
+  text: '(Sikayet kaydi.|Musteri sikayeti kaydi.)
+    Sikayet sahibi {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    kimlik {id:TCKN}[?0.7:, dogum tarihi {entity:DOB}]. Konu {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
+    [?0.6:Adres {entity:ADDRESS}. ][?0.75:Iletisim {id:PHONE}, eposta {id:EMAIL}. ]Hesap {id:IBAN} olarak kayitli.[?0.4: Kart {id:PAN}.][?0.6: Isyeri {entity:ORG}, vergi numarasi {id:VKN}.][?special:
+    Gorusmede {entity:BIOMETRIC_REF} beyani alindi.][?special: Ayrica
     {entity:UNION} notu eklendi.] (Kayit acildi.|Sikayet ilgili birime iletildi.|Basvuru kayda
     alindi.|Dosya olusturuldu.)'
 - id: eval_sexual_life_political
   weight: '1'
-  text: '(Sikayet kaydi.|Musteri sikayeti kaydi.|Cagri merkezi sikayet formu.|Sube uzerinden acilan kayit.)
-    (Sikayet sahibi|Basvuran|Musteri) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
-    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. (Konu|Sikayet
-    konusu|Basvuru konusu) {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
-    [?0.6:(Adres|Kayitli adres) {entity:ADDRESS}. ][?0.75:(Iletisim|Telefon) {id:PHONE}[?0.6:,
-    (eposta|e-posta) {id:EMAIL}]. ](Hesap|Iade hesabi|Bildirilen hesap) {id:IBAN} (olarak kayitli|olarak
-    bildirildi).[?0.4: (Kart|Islem karti) {id:PAN}.][?0.6: (Isyeri|Ilgili kurum|Karsi taraf)
-    {entity:ORG}[?0.55:, (vergi numarasi|vergi kimlik numarasi) {id:VKN}].][?special:
-    (Gorusmede|Basvuruda) {entity:SEXUAL_LIFE} beyani alindi.][?special: (Ayrica|Dosyaya)
+  text: '(Sikayet kaydi.|Musteri sikayeti kaydi.)
+    Sikayet sahibi {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    kimlik {id:TCKN}[?0.7:, dogum tarihi {entity:DOB}]. Konu {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
+    [?0.6:Adres {entity:ADDRESS}. ][?0.75:Iletisim {id:PHONE}, eposta {id:EMAIL}. ]Hesap {id:IBAN} olarak kayitli.[?0.4: Kart {id:PAN}.][?0.6: Isyeri {entity:ORG}, vergi numarasi {id:VKN}.][?special:
+    Gorusmede {entity:SEXUAL_LIFE} beyani alindi.][?special: Ayrica
     {entity:POLITICAL} notu eklendi.] (Kayit acildi.|Sikayet ilgili birime iletildi.|Basvuru kayda
     alindi.|Dosya olusturuldu.)'

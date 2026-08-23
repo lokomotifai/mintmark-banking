@@ -10,8 +10,8 @@ from __future__ import annotations
 import json
 import re
 import subprocess
-import tempfile
 import sys
+import tempfile
 from pathlib import Path
 
 import pytest
@@ -638,9 +638,15 @@ def evaluation_mint(tmp_path_factory: pytest.TempPathFactory) -> Path:
         recipe="pii-eval",
         seed=11,
         out=out,
-        records={"customer": 40, "account": 40, "card": 20, "transaction": 40,
-            "complaint_ticket_eval": 0, "kyc_note_eval": 200,
-            "support_transcript_eval": 0},
+        records={
+            "customer": 200,
+            "account": 200,
+            "card": 100,
+            "transaction": 1600,
+            "complaint_ticket_eval": 0,
+            "kyc_note_eval": 200,
+            "support_transcript_eval": 0,
+        },
         invocation="pytest",
     )
     return out
@@ -651,7 +657,9 @@ def test_the_evaluation_documents_are_not_one_sentence_repeated(evaluation_mint:
     entity at a fixed offset behind a fixed cue word. A gazetteer and six regular
     expressions scored near perfectly on it, which says nothing about production."""
     bodies = {}
-    for line in (evaluation_mint / "kyc_note_eval.jsonl").read_text(encoding="utf-8").splitlines():
+    for line in (
+        (evaluation_mint / "kyc_note_eval.jsonl").read_text(encoding="utf-8").splitlines()
+    ):
         if line.strip():
             record = json.loads(line)
             key = next(v for k, v in record.items() if k.endswith("_id"))

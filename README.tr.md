@@ -150,6 +150,13 @@ kullanır: belge başına iki özel nitelik slotu ve etiketler set boyunca eşit
 dağıtılmış. Taban ve değerlendirme şablonları, bir tarifin ikisini yarı yarıya
 karıştıramaması için tek bir set üzerinde düğme değil, ayrı setlerdir.
 
+### Bir belgenin bağlı olduğu kayıt hakkında söylemedikleri
+
+Belge gövdesindeki bir kimlik bilgisi taze bir çekimdir. `{id:TCKN}`, `{id:IBAN}`,
+`{id:PHONE}` ve `{entity:PERSON}` ile adlandırılan kişi, belgenin bağlı olduğu
+müşteri veya hesap kaydından bağımsız çekilir. Aralıklar doğru kalır; ancak bu
+paket belge ve kayıt kimliklerinin eşleşmesini gerektiren testleri desteklemez.
+
 ## İki tarif
 
 | Tarif | Şekil | Ne için |
