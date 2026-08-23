@@ -19,7 +19,8 @@ which declarations produced a dataset and seeds nothing.
 
 ### Security
 
-- Require the audited Mintmark 0.3 core and safe identifier policy, bind the
+- Require the audited Mintmark 0.3.1 core, whose manifest budget verifies the
+  pack's 250,000 transaction rows; enforce the safe identifier policy, bind the
   vendored wheel to immutable source, and pin CI dependencies.
 - Enforce feasible customer-account-transaction cardinalities and extend the
   evaluation transaction count so every account receives its declared minimum.
