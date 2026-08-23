@@ -169,8 +169,8 @@ def test_unicode_obfuscation_cannot_bypass_the_pack_denylist(obfuscated: str) ->
 # Recipes.
 
 
-def test_the_three_named_recipes_exist() -> None:
-    assert set(PACK.recipes) == {"retail-baseline", "pii-eval", "anomaly-mix"}
+def test_the_two_named_recipes_exist() -> None:
+    assert set(PACK.recipes) == {"retail-baseline", "pii-eval"}
 
 
 def test_every_recipe_ships_with_the_safe_policy() -> None:
@@ -207,7 +207,7 @@ def minted(tmp_path_factory: pytest.TempPathFactory) -> Path:
     out = tmp_path_factory.mktemp("pack") / "run"
     mint(
         pack=ROOT,
-        recipe="anomaly-mix",
+        recipe="retail-baseline",
         seed=1,
         out=out,
         records={

@@ -21,7 +21,7 @@
 <p align="center">
   <a href="https://github.com/lokomotifai/mintmark"><img alt="Requires the Mintmark core" src="https://img.shields.io/badge/core-%3E%3D0.3%2C%3C0.4-17191F?style=flat-square"></a>
   <img alt="Seven record types" src="https://img.shields.io/badge/record%20types-7-17191F?style=flat-square">
-  <img alt="Three recipes" src="https://img.shields.io/badge/recipes-3-17191F?style=flat-square">
+  <img alt="Two recipes" src="https://img.shields.io/badge/recipes-2-17191F?style=flat-square">
   <img alt="26 fictional bank names" src="https://img.shields.io/badge/fictional%20banks-26-D11F26?style=flat-square">
   <img alt="Identifier policy safe" src="https://img.shields.io/badge/identifiers-checksum--invalid-D11F26?style=flat-square">
   <a href="README.tr.md"><img alt="Türkçe" src="https://img.shields.io/badge/belgeler-Türkçe-D11F26?style=flat-square"></a>
@@ -76,7 +76,7 @@ eighteen coverage targets.
 | --- | --- |
 | Seven record types, three of which are free text | Any engine code. The only Python is under `tests/` and imports the public API alone |
 | 26 invented bank names, scanned against a real-institution register in CI | Any real bank, merchant, or person. A collision fails the build |
-| Three recipes, one of which is a labeled evaluation set | A dataset in git. Only bounded samples, capped at 50 records per type |
+| Two recipes, one of which is a labeled evaluation set | A dataset in git. Only bounded samples, capped at 50 records per type |
 | Every identifier checksum-invalid by default | A corporate customer record type. This pack is retail, which is why tax numbers reach it through documents |
 
 ## Mint it yourself
@@ -149,15 +149,14 @@ and the labels spread evenly across the set. Baseline and evaluation templates
 are separate sets rather than one set with a knob, so that a recipe cannot half
 mix them.
 
-## The three recipes
+## The two recipes
 
 | Recipe | Shape | For |
 | --- | --- | --- |
 | **retail-baseline** | 10 000 customers, about 18 000 accounts, 9 000 cards, 250 000 transactions, and 2 800 documents | Filling a test environment with something that behaves like a portfolio |
 | **pii-eval** | 2 000 documents, every label above its target | Measuring a detector's recall and precision on Turkish banking text |
-| **anomaly-mix** | The baseline plus a labeled anomaly field on every transaction | Scoring a monitoring system against ground truth |
 
-### A limitation of anomaly-mix, stated plainly
+### A limitation of the anomaly labels, stated plainly
 
 Every transaction carries `anomaly_kind` and `is_anomaly`, and the two never
 disagree. But the four kinds are **per-row labels drawn at declared rates, not
@@ -167,7 +166,7 @@ time on one account; here it is a label.
 That is a limit of the pack contract rather than an oversight: each field is
 drawn from an independent stream, so a pack cannot declare a pattern that
 correlates rows. Genuine temporal shapes need a core change, and it is recorded
-as one. Use this recipe to check that your pipeline carries labels through
+as one. Use the baseline recipe to check that your pipeline carries labels through
 correctly. Do not use it to measure whether a detector finds real bursts.
 
 ## Identifiers cannot be real
@@ -206,7 +205,7 @@ enter through a template literal either.
 ```
 pack.yaml           identity, the core pin, the allowed identifier policies
 fields/             one file per record type, in generation order
-recipes/            retail-baseline, pii-eval, anomaly-mix
+recipes/            retail-baseline and pii-eval
 templates/          baseline sets, and the separate evaluation sets
 lexicons/           invented banks, products, counterparties, and the denylist
 samples/            fifty records per type, regenerated from a fixed seed

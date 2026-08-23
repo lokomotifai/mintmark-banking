@@ -24,6 +24,8 @@ which declarations produced a dataset and seeds nothing.
 - Enforce feasible customer-account-transaction cardinalities and extend the
   evaluation transaction count so every account receives its declared minimum.
 - Remove ignored document-mix keys and make every domain lexicon reachable.
+- Remove the byte-identical `anomaly-mix` recipe, whose name falsely implied it
+  could alter anomaly rates that are fixed by the transaction declaration.
 - Exhaustively scan declaration branches and rendered output with the pack
   denylist, including Unicode-obfuscated names and checksum-valid literals.
 

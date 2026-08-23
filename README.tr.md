@@ -21,7 +21,7 @@
 <p align="center">
   <a href="https://github.com/lokomotifai/mintmark"><img alt="Mintmark çekirdeğini gerektirir" src="https://img.shields.io/badge/çekirdek-%3E%3D0.3%2C%3C0.4-17191F?style=flat-square"></a>
   <img alt="Yedi kayıt tipi" src="https://img.shields.io/badge/kayıt%20tipi-7-17191F?style=flat-square">
-  <img alt="Üç tarif" src="https://img.shields.io/badge/tarif-3-17191F?style=flat-square">
+  <img alt="İki tarif" src="https://img.shields.io/badge/tarif-2-17191F?style=flat-square">
   <img alt="26 kurgusal banka adı" src="https://img.shields.io/badge/kurgusal%20banka-26-D11F26?style=flat-square">
   <img alt="Tanımlayıcı politikası safe" src="https://img.shields.io/badge/tanımlayıcılar-checksum%20geçersiz-D11F26?style=flat-square">
   <a href="README.md"><img alt="English" src="https://img.shields.io/badge/docs-English-D11F26?style=flat-square"></a>
@@ -76,7 +76,7 @@ hepsini tutturuyor.
 | --- | --- |
 | Yedi kayıt tipi, üçü serbest metin | Motor kodu. Tek Python `tests/` altında ve yalnızca kamusal API'yi içe aktarıyor |
 | CI'da gerçek kurum siciline karşı taranan 26 uydurma banka adı | Gerçek banka, işyeri veya kişi. Çakışma derlemeyi düşürür |
-| Üç tarif, biri etiketli değerlendirme kümesi | Git'te veri kümesi. Yalnızca tip başına 50 kayıtla sınırlı örnekler |
+| İki tarif, biri etiketli değerlendirme kümesi | Git'te veri kümesi. Yalnızca tip başına 50 kayıtla sınırlı örnekler |
 | Varsayılan olarak checksum geçersiz her tanımlayıcı | Kurumsal müşteri kayıt tipi. Bu paket bireyseldir; vergi numaraları bu yüzden belgeler üzerinden gelir |
 
 ## Kendiniz basın
@@ -150,15 +150,14 @@ kullanır: belge başına iki özel nitelik slotu ve etiketler set boyunca eşit
 dağıtılmış. Taban ve değerlendirme şablonları, bir tarifin ikisini yarı yarıya
 karıştıramaması için tek bir set üzerinde düğme değil, ayrı setlerdir.
 
-## Üç tarif
+## İki tarif
 
 | Tarif | Şekil | Ne için |
 | --- | --- | --- |
 | **retail-baseline** | 10 000 müşteri, yaklaşık 18 000 hesap, 9 000 kart, 250 000 işlem ve 2 800 belge | Bir test ortamını portföy gibi davranan bir şeyle doldurmak |
 | **pii-eval** | 2 000 belge, her etiket hedefinin üzerinde | Bir dedektörün Türkçe bankacılık metnindeki duyarlılık ve kesinliğini ölçmek |
-| **anomaly-mix** | Taban artı her işlemde etiketli bir anomali alanı | Bir izleme sistemini gerçek referansa karşı puanlamak |
 
-### anomaly-mix'in açıkça belirtilen bir sınırı
+### Anomali etiketlerinin açıkça belirtilen bir sınırı
 
 Her işlem `anomaly_kind` ve `is_anomaly` taşır ve ikisi hiç çelişmez. Ancak dört
 tür, **beyan edilen oranlarda çekilmiş satır bazlı etiketlerdir, gerçek zamansal
@@ -168,7 +167,7 @@ işlemdir; burada bir etikettir.
 Bu bir gözden kaçırma değil, paket sözleşmesinin sınırıdır: her alan bağımsız bir
 akıştan çekilir, dolayısıyla bir paket satırları ilişkilendiren bir örüntü beyan
 edemez. Gerçek zamansal şekiller bir çekirdek değişikliği ister ve öyle
-kaydedilmiştir. Bu tarifi hattınızın etiketleri doğru taşıdığını denetlemek için
+kaydedilmiştir. Taban tarifini hattınızın etiketleri doğru taşıdığını denetlemek için
 kullanın. Bir dedektörün gerçek yığılmaları bulup bulmadığını ölçmek için
 kullanmayın.
 
@@ -208,7 +207,7 @@ ad şablon içindeki düz metinden de giremez.
 ```
 pack.yaml           kimlik, çekirdek pini, izin verilen tanımlayıcı politikaları
 fields/             üretim sırasına göre kayıt tipi başına bir dosya
-recipes/            retail-baseline, pii-eval, anomaly-mix
+recipes/            retail-baseline ve pii-eval
 templates/          taban setleri ve ayrı değerlendirme setleri
 lexicons/           uydurma bankalar, ürünler, karşı taraflar ve denylist
 samples/            tip başına elli kayıt, sabit tohumdan yeniden üretilir

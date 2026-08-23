@@ -52,8 +52,10 @@ pattern that correlates rows, because each field comes from an independent
 stream.
 
 This is recorded in both READMEs rather than left for a user to discover. Genuine
-temporal shapes are a core change. If one lands, this pack's anomaly recipe
-changes with it and that is a major version event.
+temporal shapes are a core change. If one lands, the baseline contract changes
+with it and that is a major version event. A former `anomaly-mix` recipe was
+removed because it was byte-for-byte identical to the baseline and falsely
+implied that a recipe could alter field-level anomaly rates.
 
 ## Regenerating the samples
 
