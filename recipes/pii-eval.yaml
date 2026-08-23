@@ -4,7 +4,7 @@ records:
   customer: 900
   account: 900
   card: 400
-  transaction: 900
+  transaction: 7200
   complaint_ticket: 0
   kyc_note: 0
   support_transcript: 0

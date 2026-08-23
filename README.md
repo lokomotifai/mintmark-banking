@@ -14,12 +14,12 @@
 <p align="center">
   <a href="https://github.com/lokomotifai/mintmark-banking/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/lokomotifai/mintmark-banking/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
   <img alt="Zero engine code" src="https://img.shields.io/badge/engine%20code-none-3C873A?style=flat-square">
-  <img alt="Release v0.2.0" src="https://img.shields.io/badge/release-v0.2.0-8A6412?style=flat-square">
+  <a href="https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.2.0"><img alt="Release v0.2.0" src="https://img.shields.io/badge/release-v0.2.0-8A6412?style=flat-square"></a>
   <a href="LICENSE"><img alt="Apache-2.0 license" src="https://img.shields.io/badge/license-Apache--2.0-3B3F46?style=flat-square"></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/lokomotifai/mintmark"><img alt="Requires the Mintmark core" src="https://img.shields.io/badge/core-%3E%3D0.1%2C%3C0.2-17191F?style=flat-square"></a>
+  <a href="https://github.com/lokomotifai/mintmark"><img alt="Requires the Mintmark core" src="https://img.shields.io/badge/core-%3E%3D0.3%2C%3C0.4-17191F?style=flat-square"></a>
   <img alt="Seven record types" src="https://img.shields.io/badge/record%20types-7-17191F?style=flat-square">
   <img alt="Two recipes" src="https://img.shields.io/badge/recipes-2-17191F?style=flat-square">
   <img alt="26 fictional bank names" src="https://img.shields.io/badge/fictional%20banks-26-D11F26?style=flat-square">
@@ -49,17 +49,16 @@ AI pilot environments without KVKK exposure, and their vendors cannot reasonably
 ask them to. This pack declares the data those environments need, and the engine
 mints it: deterministic, span-labeled, and sealed by a manifest anyone can check.
 
-**Version 0.2.0, prepared and not tagged yet. Its reference datasets are minted
-from these declarations and attached to
-v0.2.0 when the tag
-is cut, each carrying its own manifest and checksums.** What is true today: `packcheck` passes against
-the pinned core, the test suite passes, and the evaluation recipe meets every one of its
-eighteen coverage targets.
+**Release 0.2.0. Its reference datasets are attached to
+[v0.2.0](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.2.0),
+each carrying its own manifest and checksums.** `packcheck` passes against the
+pinned core, the test suite passes, and the evaluation recipe meets every one of
+its eighteen coverage targets.
 
 > [!IMPORTANT]
 > **What this pack is not.** It is not anonymization of your banking data; it
 > ingests none. It is not a compliance guarantee and not a legal safe harbor. The
-> anomaly recipe is detector-side test data and this repository documents no
+> anomaly labels are detector-side test data and this repository documents no
 > evasion guidance of any kind. Generated phone numbers can coincide with
 > assigned ones, because the Turkish numbering plan reserves no fictional range.
 > This data is for testing systems. It is never for contacting anyone.
@@ -104,11 +103,11 @@ One complaint body, as emitted:
 
 ```
 Sayin yetkili, Meryem Şimşek adima kayitli hesabimla ilgili bir
-sorun yasiyorum. kredi konusunda, ozellikle sube yogunlugu
-kaleminde, birkac kez basvurmama ragmen cozum alamadim. Kimlik
-numaram 45797577307, hesabim TR439999902711375762415596. Adresim
-Fatih Mahallesi, ulasilabilecegim numara +90 592 647 78 19.
-Konunun incelenmesini ve tarafima geri donus yapilmasini rica
+sorun yasiyorum. kredi konusunda, sube yogunlugu basliginda birkac
+kez basvurmama ragmen cozum alamadim. Kimlik numaram 45797577307,
+hesabim TR439999902711375762415596. Adresim Fatih Mahallesi,
+ulasilabilecegim numara +90 592 647 78 19. Konunun
+degerlendirilmesini ve tarafima geri donus yapilmasini rica
 ederim.
 ```
 
@@ -153,17 +152,10 @@ mix them.
 ### What a document does not tell you about its record
 
 An identifier inside a document body is a fresh draw. `{id:TCKN}`, `{id:IBAN}`,
-`{id:PHONE}` and the person `{entity:PERSON}` names are drawn independently of the
-record the document is attached to, so a document linked to `CUST-00000123` names
-somebody else and cites a national identity number no customer row carries. The
-spans are still right: each one points at the surface it labels, and a detector
-scored on them is scored correctly.
-
-What this rules out is anything that needs the two sides to agree. Checking that a
-redaction pipeline gives one person the same pseudonym in a table and in prose, or
-that a control catches a document citing an identifier its master record does not
-hold, cannot be done with this data. It is stated here for the same reason the
-other structural losses are: it is invisible until somebody joins on it.
+`{id:PHONE}`, and the person named by `{entity:PERSON}` are drawn independently
+of the customer or account record the document is attached to. The spans remain
+correct, but this pack does not support tests that require document and record
+identities to agree.
 
 ## The two recipes
 
@@ -172,7 +164,7 @@ other structural losses are: it is invisible until somebody joins on it.
 | **retail-baseline** | 10 000 customers, about 18 000 accounts, 9 000 cards, 250 000 transactions, and 2 800 documents | Filling a test environment with something that behaves like a portfolio |
 | **pii-eval** | 2 000 documents, every label above its target | Measuring a detector's recall and precision on Turkish banking text |
 
-### A limitation of the anomaly fields, stated plainly
+### A limitation of the anomaly labels, stated plainly
 
 Every transaction carries `anomaly_kind` and `is_anomaly`, and the two never
 disagree. But the four kinds are **per-row labels drawn at declared rates, not
@@ -182,7 +174,7 @@ time on one account; here it is a label.
 That is a limit of the pack contract rather than an oversight: each field is
 drawn from an independent stream, so a pack cannot declare a pattern that
 correlates rows. Genuine temporal shapes need a core change, and it is recorded
-as one. Use these fields to check that your pipeline carries labels through
+as one. Use the baseline recipe to check that your pipeline carries labels through
 correctly. Do not use it to measure whether a detector finds real bursts.
 
 ## Identifiers cannot be real
@@ -221,7 +213,7 @@ enter through a template literal either.
 ```
 pack.yaml           identity, the core pin, the allowed identifier policies
 fields/             one file per record type, in generation order
-recipes/            retail-baseline, pii-eval
+recipes/            retail-baseline and pii-eval
 templates/          baseline sets, and the separate evaluation sets
 lexicons/           invented banks, products, counterparties, and the denylist
 samples/            fifty records per type, regenerated from a fixed seed
@@ -246,16 +238,11 @@ as the artifact it runs against.
 
 ## Project status
 
-Version 0.2.0, not tagged yet. This version moves emitted bytes for a fixed seed,
-which this project family calls a major version event: the core began honouring
-template weights, and both the core and this pack widened the surface vocabularies
-a document draws from. The reference datasets attached to v0.1.2 stay valid and
-stay reproducible, with the core and pack versions their own manifests record. New
-ones are minted from these declarations at the seeds in
-[docs/reference-datasets.json](docs/reference-datasets.json) when the tag is cut.
-The engine is on PyPI as [`mintmark`](https://pypi.org/project/mintmark/), and the
-weekly pin check stays red until 0.2.0 is published there, which is accurate: a
-vendored core nobody else can fetch is a core nobody else can check.
+Version 0.2.0 is released. Its two reference datasets are attached to
+[v0.2.0](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.2.0);
+they were minted with the safe identifier policy at the seeds declared in
+[docs/reference-datasets.json](docs/reference-datasets.json). The engine is on PyPI as
+[`mintmark`](https://pypi.org/project/mintmark/).
 
 The seeds are settled deliberately. A changed seed silently invalidates a
 published manifest, so it is never the fix for a coverage miss; the templates or
@@ -287,7 +274,6 @@ right to the Mintmark name or logo; see [TRADEMARKS.md](TRADEMARKS.md).
 Reference datasets are licensed **CC BY 4.0**: use them for anything, including
 commercially, and credit the source. Every dataset carries its own credit line in
 `MINTMARK.json` and `mintmark verify` prints it, so nothing has to be assembled by
-hand. See [LICENSE-DATASETS.md](LICENSE-DATASETS.md). Pending legal confirmation;
-nothing here states it as settled.
+hand. See [LICENSE-DATASETS.md](LICENSE-DATASETS.md).
 
 <p align="center"><sub>Part of the Mintmark family: <a href="https://github.com/lokomotifai/mintmark">the engine</a> · <a href="https://github.com/lokomotifai/mintmark-insurance">insurance</a> · <a href="https://github.com/lokomotifai/mintmark-hr">human resources</a></sub></p>

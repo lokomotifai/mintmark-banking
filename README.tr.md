@@ -14,12 +14,12 @@
 <p align="center">
   <a href="https://github.com/lokomotifai/mintmark-banking/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/lokomotifai/mintmark-banking/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
   <img alt="Sıfır motor kodu" src="https://img.shields.io/badge/motor%20kodu-yok-3C873A?style=flat-square">
-  <img alt="Sürüm v0.2.0" src="https://img.shields.io/badge/sürüm-v0.2.0-8A6412?style=flat-square">
+  <a href="https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.2.0"><img alt="Sürüm v0.2.0" src="https://img.shields.io/badge/sürüm-v0.2.0-8A6412?style=flat-square"></a>
   <a href="LICENSE"><img alt="Apache-2.0 lisansı" src="https://img.shields.io/badge/lisans-Apache--2.0-3B3F46?style=flat-square"></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/lokomotifai/mintmark"><img alt="Mintmark çekirdeğini gerektirir" src="https://img.shields.io/badge/çekirdek-%3E%3D0.1%2C%3C0.2-17191F?style=flat-square"></a>
+  <a href="https://github.com/lokomotifai/mintmark"><img alt="Mintmark çekirdeğini gerektirir" src="https://img.shields.io/badge/çekirdek-%3E%3D0.3%2C%3C0.4-17191F?style=flat-square"></a>
   <img alt="Yedi kayıt tipi" src="https://img.shields.io/badge/kayıt%20tipi-7-17191F?style=flat-square">
   <img alt="İki tarif" src="https://img.shields.io/badge/tarif-2-17191F?style=flat-square">
   <img alt="26 kurgusal banka adı" src="https://img.shields.io/badge/kurgusal%20banka-26-D11F26?style=flat-square">
@@ -50,17 +50,16 @@ makul olarak isteyemez. Bu paket o ortamların ihtiyaç duyduğu veriyi beyan ed
 motor da basar: deterministik, span düzeyinde etiketli ve herkesin
 denetleyebileceği bir manifestoyla mühürlenmiş.
 
-**Sürüm 0.2.0, hazırlandı ve henüz etiketlenmedi. Referans veri kümeleri bu
-bildirimlerden basılıp etiket kesildiğinde
-v0.2.0 sürümüne eklenecek;
-her biri künyesini ve sağlamalarını taşıyor.** Bugün doğru olan: `packcheck` sabitlenmiş çekirdeğe karşı
-geçiyor, test paketi geçiyor ve değerlendirme tarifi on sekiz kapsam hedefinin
-hepsini tutturuyor.
+**Sürüm 0.2.0. Referans veri kümeleri
+[v0.2.0 sürümüne](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.2.0)
+eklenmiştir; her biri kendi künyesini ve sağlamalarını taşır.** `packcheck`
+sabitlenmiş çekirdeğe karşı geçiyor, test paketi geçiyor ve değerlendirme tarifi
+on sekiz kapsam hedefinin hepsini tutturuyor.
 
 > [!IMPORTANT]
 > **Bu paket ne değildir.** Bankacılık verinizin anonimleştirilmesi değildir; hiç
 > veri almaz. Uyumluluk garantisi değildir, hukuki güvenli liman değildir. Anomali
-> tarifi dedektör tarafı test verisidir ve bu depo hiçbir atlatma rehberliği
+> etiketleri dedektör tarafı test verisidir ve bu depo hiçbir atlatma rehberliği
 > içermez. Üretilen telefon numaraları atanmış numaralarla çakışabilir, çünkü
 > Türkiye numara planı kurgusal bir aralık ayırmaz. Bu veri sistemleri test etmek
 > içindir. Hiçbir zaman kimseye ulaşmak için değildir.
@@ -105,11 +104,11 @@ temsil etmek yerine derlemeyi düşürür.
 
 ```
 Sayin yetkili, Meryem Şimşek adima kayitli hesabimla ilgili bir
-sorun yasiyorum. kredi konusunda, ozellikle sube yogunlugu
-kaleminde, birkac kez basvurmama ragmen cozum alamadim. Kimlik
-numaram 45797577307, hesabim TR439999902711375762415596. Adresim
-Fatih Mahallesi, ulasilabilecegim numara +90 592 647 78 19.
-Konunun incelenmesini ve tarafima geri donus yapilmasini rica
+sorun yasiyorum. kredi konusunda, sube yogunlugu basliginda birkac
+kez basvurmama ragmen cozum alamadim. Kimlik numaram 45797577307,
+hesabim TR439999902711375762415596. Adresim Fatih Mahallesi,
+ulasilabilecegim numara +90 592 647 78 19. Konunun
+degerlendirilmesini ve tarafima geri donus yapilmasini rica
 ederim.
 ```
 
@@ -155,16 +154,8 @@ karıştıramaması için tek bir set üzerinde düğme değil, ayrı setlerdir.
 
 Belge gövdesindeki bir kimlik bilgisi taze bir çekimdir. `{id:TCKN}`, `{id:IBAN}`,
 `{id:PHONE}` ve `{entity:PERSON}` ile adlandırılan kişi, belgenin bağlı olduğu
-kayıttan bağımsız çekilir; bu yüzden `CUST-00000123` kaydına bağlı bir belge başka
-birini adlandırır ve hiçbir müşteri satırının taşımadığı bir kimlik numarası
-anar. Aralıklar yine doğrudur: her biri etiketlediği yüzeyi gösterir ve bunlar
-üzerinde puanlanan bir detektör doğru puanlanır.
-
-Bunun dışarıda bıraktığı şey, iki tarafın uyuşmasını gerektiren her testtir. Bir
-maskeleme hattının aynı kişiye tabloda ve düz metinde aynı takma adı verip
-vermediğini ya da bir kontrolün, ana kaydının taşımadığı bir kimliği anan belgeyi
-yakalayıp yakalamadığını bu veriyle sınayamazsınız. Burada yazılı olmasının
-sebebi diğer yapısal kayıplarla aynı: biri birleştirme yapana kadar görünmez.
+müşteri veya hesap kaydından bağımsız çekilir. Aralıklar doğru kalır; ancak bu
+paket belge ve kayıt kimliklerinin eşleşmesini gerektiren testleri desteklemez.
 
 ## İki tarif
 
@@ -173,7 +164,7 @@ sebebi diğer yapısal kayıplarla aynı: biri birleştirme yapana kadar görün
 | **retail-baseline** | 10 000 müşteri, yaklaşık 18 000 hesap, 9 000 kart, 250 000 işlem ve 2 800 belge | Bir test ortamını portföy gibi davranan bir şeyle doldurmak |
 | **pii-eval** | 2 000 belge, her etiket hedefinin üzerinde | Bir dedektörün Türkçe bankacılık metnindeki duyarlılık ve kesinliğini ölçmek |
 
-### Anomali alanlarının açıkça belirtilen bir sınırı
+### Anomali etiketlerinin açıkça belirtilen bir sınırı
 
 Her işlem `anomaly_kind` ve `is_anomaly` taşır ve ikisi hiç çelişmez. Ancak dört
 tür, **beyan edilen oranlarda çekilmiş satır bazlı etiketlerdir, gerçek zamansal
@@ -183,7 +174,7 @@ işlemdir; burada bir etikettir.
 Bu bir gözden kaçırma değil, paket sözleşmesinin sınırıdır: her alan bağımsız bir
 akıştan çekilir, dolayısıyla bir paket satırları ilişkilendiren bir örüntü beyan
 edemez. Gerçek zamansal şekiller bir çekirdek değişikliği ister ve öyle
-kaydedilmiştir. Bu tarifi hattınızın etiketleri doğru taşıdığını denetlemek için
+kaydedilmiştir. Taban tarifini hattınızın etiketleri doğru taşıdığını denetlemek için
 kullanın. Bir dedektörün gerçek yığılmaları bulup bulmadığını ölçmek için
 kullanmayın.
 
@@ -223,7 +214,7 @@ ad şablon içindeki düz metinden de giremez.
 ```
 pack.yaml           kimlik, çekirdek pini, izin verilen tanımlayıcı politikaları
 fields/             üretim sırasına göre kayıt tipi başına bir dosya
-recipes/            retail-baseline, pii-eval
+recipes/            retail-baseline ve pii-eval
 templates/          taban setleri ve ayrı değerlendirme setleri
 lexicons/           uydurma bankalar, ürünler, karşı taraflar ve denylist
 samples/            tip başına elli kayıt, sabit tohumdan yeniden üretilir
@@ -248,17 +239,11 @@ koştuğu artefakt kadar iyidir.
 
 ## Proje durumu
 
-Sürüm 0.2.0, henüz etiketlenmedi. Bu sürüm sabit bir tohum için üretilen baytları
-oynatıyor; bu depo ailesi buna ana sürüm olayı diyor: çekirdek şablon ağırlıklarını
-uygulamaya başladı ve hem çekirdek hem bu paket, bir belgenin çektiği yüzey
-dağarcığını genişletti. v0.1.2 sürümüne ekli referans veri kümeleri geçerli kalır
-ve kendi manifestlerinin kaydettiği çekirdek ve paket sürümleriyle yeniden
-üretilebilir olmayı sürdürür. Yenileri, etiket kesildiğinde bu bildirimlerden
-[docs/reference-datasets.json](docs/reference-datasets.json) içindeki tohumlarla
-basılır. Motor PyPI'da [`mintmark`](https://pypi.org/project/mintmark/) olarak
-duruyor ve haftalık sabitleme kontrolü 0.2.0 orada yayımlanana kadar kırmızı
-kalıyor; bu da doğru: başkasının çekemediği bir çekirdek, başkasının
-denetleyemediği bir çekirdektir.
+Sürüm 0.2.0 yayımlanmıştır. İki referans veri kümesi
+[v0.2.0](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.2.0)
+sürümüne eklenmiştir; [docs/reference-datasets.json](docs/reference-datasets.json)
+içinde bildirilen tohumlarla ve güvenli kimlik politikasıyla üretildiler. Motor PyPI'de
+[`mintmark`](https://pypi.org/project/mintmark/) olarak yayımlanmıştır.
 
 Tohumlar bilerek yerleşiktir. Değişen bir tohum yayımlanmış bir manifestoyu
 sessizce geçersizleştirir, dolayısıyla asla bir kapsam eksiğinin çözümü değildir;
@@ -289,7 +274,6 @@ Referans veri kümeleri **CC BY 4.0** ile lisanslıdır: ticari kullanım dahil 
 amaçla kullanabilirsiniz, kaynağı belirtmeniz yeterlidir. Her veri kümesi kendi
 atıf satırını `MINTMARK.json` içinde taşır ve `mintmark verify` bunu yazdırır;
 elle bir şey kurmanız gerekmez. Bakınız
-[LICENSE-DATASETS.md](LICENSE-DATASETS.md). Hukuki teyit beklemektedir; burada
-hiçbir şey bunu yerleşik olarak belirtmez.
+[LICENSE-DATASETS.md](LICENSE-DATASETS.md).
 
 <p align="center"><sub>Mintmark ailesinin parçası: <a href="https://github.com/lokomotifai/mintmark">çekirdek</a> · <a href="https://github.com/lokomotifai/mintmark-insurance">sigorta</a> · <a href="https://github.com/lokomotifai/mintmark-hr">insan kaynakları</a></sub></p>

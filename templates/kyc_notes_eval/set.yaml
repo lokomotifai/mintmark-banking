@@ -1,97 +1,55 @@
 entries:
 - id: eval_health_religion
   weight: '1'
-  text: '(Musteri gorusmesi notu.|Tanima sureci kaydi.|Sube gorusme formu.|Hesap acilis gorusmesi.) (Basvuru
-    sahibi|Musteri adayi|Gorusulen kisi) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
-    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. [?0.6:(Adres|Beyan
-    edilen adres) {entity:ADDRESS}. ][?0.75:(Iletisim|Telefon) {id:PHONE}[?0.6:, (eposta|e-posta)
-    {id:EMAIL}]. ](Hesap|Vadesiz hesap|Acilan hesap) {id:IBAN} (olarak acildi|olarak tanimlandi)[?0.5:,
-    urun {lex:products_fictional}].[?0.4: (Kart|Banka karti) {id:PAN} olarak tanimlandi.][?0.65:
-    (Isyeri|Calistigi kurum) {entity:ORG}[?0.6:, (kurumsal vergi numarasi|vergi numarasi)
-    {id:VKN}].][?special: (Gorusmede|Formda) {entity:HEALTH} beyani alindi.][?special: (Ayrica|Dosyaya)
-    {entity:RELIGION} notu eklendi.] (Belgeler teslim alindi.|Kayit tamamlandi.|Dosya acildi.|Gorusme
-    kapatildi.)'
+  text: '(Musteri gorusmesi notu.|Tanima sureci kaydi.) Basvuru sahibi {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    kimlik {id:TCKN}[?0.7:, dogum tarihi {entity:DOB}]. [?0.6:Adres {entity:ADDRESS}. ][?0.75:Iletisim {id:PHONE}, eposta {id:EMAIL}. ]Hesap {id:IBAN} olarak acildi[?0.5:,
+    urun {lex:products_fictional}].[?0.4: Kart {id:PAN} olarak tanimlandi.][?0.65: Isyeri {entity:ORG}, vergi numarasi {id:VKN}.][?special: Gorusmede {entity:HEALTH} beyani alindi.][?special: Ayrica
+    {entity:RELIGION} notu eklendi.] (Belgeler teslim alindi.|Kayit tamamlandi.)'
 - id: eval_union_ethnicity
   weight: '1'
-  text: '(Musteri gorusmesi notu.|Tanima sureci kaydi.|Sube gorusme formu.|Hesap acilis gorusmesi.) (Basvuru
-    sahibi|Musteri adayi|Gorusulen kisi) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
-    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. [?0.6:(Adres|Beyan
-    edilen adres) {entity:ADDRESS}. ][?0.75:(Iletisim|Telefon) {id:PHONE}[?0.6:, (eposta|e-posta)
-    {id:EMAIL}]. ](Hesap|Vadesiz hesap|Acilan hesap) {id:IBAN} (olarak acildi|olarak tanimlandi)[?0.5:,
-    urun {lex:products_fictional}].[?0.4: (Kart|Banka karti) {id:PAN} olarak tanimlandi.][?0.65:
-    (Isyeri|Calistigi kurum) {entity:ORG}[?0.6:, (kurumsal vergi numarasi|vergi numarasi)
-    {id:VKN}].][?special: (Gorusmede|Formda) {entity:UNION} beyani alindi.][?special: (Ayrica|Dosyaya)
-    {entity:ETHNICITY} notu eklendi.] (Belgeler teslim alindi.|Kayit tamamlandi.|Dosya acildi.|Gorusme
-    kapatildi.)'
+  text: '(Musteri gorusmesi notu.|Tanima sureci kaydi.) Basvuru sahibi {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    kimlik {id:TCKN}[?0.7:, dogum tarihi {entity:DOB}]. [?0.6:Adres {entity:ADDRESS}. ][?0.75:Iletisim {id:PHONE}, eposta {id:EMAIL}. ]Hesap {id:IBAN} olarak acildi[?0.5:,
+    urun {lex:products_fictional}].[?0.4: Kart {id:PAN} olarak tanimlandi.][?0.65: Isyeri {entity:ORG}, vergi numarasi {id:VKN}.][?special: Gorusmede {entity:UNION} beyani alindi.][?special: Ayrica
+    {entity:ETHNICITY} notu eklendi.] (Belgeler teslim alindi.|Kayit tamamlandi.)'
 - id: eval_political_criminal
   weight: '1'
-  text: '(Musteri gorusmesi notu.|Tanima sureci kaydi.|Sube gorusme formu.|Hesap acilis gorusmesi.) (Basvuru
-    sahibi|Musteri adayi|Gorusulen kisi) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
-    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. [?0.6:(Adres|Beyan
-    edilen adres) {entity:ADDRESS}. ][?0.75:(Iletisim|Telefon) {id:PHONE}[?0.6:, (eposta|e-posta)
-    {id:EMAIL}]. ](Hesap|Vadesiz hesap|Acilan hesap) {id:IBAN} (olarak acildi|olarak tanimlandi)[?0.5:,
-    urun {lex:products_fictional}].[?0.4: (Kart|Banka karti) {id:PAN} olarak tanimlandi.][?0.65:
-    (Isyeri|Calistigi kurum) {entity:ORG}[?0.6:, (kurumsal vergi numarasi|vergi numarasi)
-    {id:VKN}].][?special: (Gorusmede|Formda) {entity:POLITICAL} beyani alindi.][?special:
-    (Ayrica|Dosyaya) {entity:CRIMINAL} notu eklendi.] (Belgeler teslim alindi.|Kayit tamamlandi.|Dosya
+  text: '(Musteri gorusmesi notu.|Tanima sureci kaydi.) Basvuru sahibi {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    kimlik {id:TCKN}[?0.7:, dogum tarihi {entity:DOB}]. [?0.6:Adres {entity:ADDRESS}. ][?0.75:Iletisim {id:PHONE}, eposta {id:EMAIL}. ]Hesap {id:IBAN} olarak acildi[?0.5:,
+    urun {lex:products_fictional}].[?0.4: Kart {id:PAN} olarak tanimlandi.][?0.65: Isyeri {entity:ORG}, vergi numarasi {id:VKN}.][?special: Gorusmede {entity:POLITICAL} beyani alindi.][?special:
+    Ayrica {entity:CRIMINAL} notu eklendi.] (Belgeler teslim alindi.|Kayit tamamlandi.|Dosya
     acildi.|Gorusme kapatildi.)'
 - id: eval_religion_biometric_ref
   weight: '1'
-  text: '(Musteri gorusmesi notu.|Tanima sureci kaydi.|Sube gorusme formu.|Hesap acilis gorusmesi.) (Basvuru
-    sahibi|Musteri adayi|Gorusulen kisi) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
-    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. [?0.6:(Adres|Beyan
-    edilen adres) {entity:ADDRESS}. ][?0.75:(Iletisim|Telefon) {id:PHONE}[?0.6:, (eposta|e-posta)
-    {id:EMAIL}]. ](Hesap|Vadesiz hesap|Acilan hesap) {id:IBAN} (olarak acildi|olarak tanimlandi)[?0.5:,
-    urun {lex:products_fictional}].[?0.4: (Kart|Banka karti) {id:PAN} olarak tanimlandi.][?0.65:
-    (Isyeri|Calistigi kurum) {entity:ORG}[?0.6:, (kurumsal vergi numarasi|vergi numarasi)
-    {id:VKN}].][?special: (Gorusmede|Formda) {entity:RELIGION} beyani alindi.][?special:
-    (Ayrica|Dosyaya) {entity:BIOMETRIC_REF} notu eklendi.] (Belgeler teslim alindi.|Kayit
+  text: '(Musteri gorusmesi notu.|Tanima sureci kaydi.) Basvuru sahibi {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    kimlik {id:TCKN}[?0.7:, dogum tarihi {entity:DOB}]. [?0.6:Adres {entity:ADDRESS}. ][?0.75:Iletisim {id:PHONE}, eposta {id:EMAIL}. ]Hesap {id:IBAN} olarak acildi[?0.5:,
+    urun {lex:products_fictional}].[?0.4: Kart {id:PAN} olarak tanimlandi.][?0.65: Isyeri {entity:ORG}, vergi numarasi {id:VKN}.][?special: Gorusmede {entity:RELIGION} beyani alindi.][?special:
+    Ayrica {entity:BIOMETRIC_REF} notu eklendi.] (Belgeler teslim alindi.|Kayit
     tamamlandi.|Dosya acildi.|Gorusme kapatildi.)'
 - id: eval_ethnicity_sexual_life
   weight: '1'
-  text: '(Musteri gorusmesi notu.|Tanima sureci kaydi.|Sube gorusme formu.|Hesap acilis gorusmesi.) (Basvuru
-    sahibi|Musteri adayi|Gorusulen kisi) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
-    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. [?0.6:(Adres|Beyan
-    edilen adres) {entity:ADDRESS}. ][?0.75:(Iletisim|Telefon) {id:PHONE}[?0.6:, (eposta|e-posta)
-    {id:EMAIL}]. ](Hesap|Vadesiz hesap|Acilan hesap) {id:IBAN} (olarak acildi|olarak tanimlandi)[?0.5:,
-    urun {lex:products_fictional}].[?0.4: (Kart|Banka karti) {id:PAN} olarak tanimlandi.][?0.65:
-    (Isyeri|Calistigi kurum) {entity:ORG}[?0.6:, (kurumsal vergi numarasi|vergi numarasi)
-    {id:VKN}].][?special: (Gorusmede|Formda) {entity:ETHNICITY} beyani alindi.][?special:
-    (Ayrica|Dosyaya) {entity:SEXUAL_LIFE} notu eklendi.] (Belgeler teslim alindi.|Kayit
+  text: '(Musteri gorusmesi notu.|Tanima sureci kaydi.) Basvuru sahibi {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    kimlik {id:TCKN}[?0.7:, dogum tarihi {entity:DOB}]. [?0.6:Adres {entity:ADDRESS}. ][?0.75:Iletisim {id:PHONE}, eposta {id:EMAIL}. ]Hesap {id:IBAN} olarak acildi[?0.5:,
+    urun {lex:products_fictional}].[?0.4: Kart {id:PAN} olarak tanimlandi.][?0.65: Isyeri {entity:ORG}, vergi numarasi {id:VKN}.][?special: Gorusmede {entity:ETHNICITY} beyani alindi.][?special:
+    Ayrica {entity:SEXUAL_LIFE} notu eklendi.] (Belgeler teslim alindi.|Kayit
     tamamlandi.|Dosya acildi.|Gorusme kapatildi.)'
 - id: eval_criminal_health
   weight: '1'
-  text: '(Musteri gorusmesi notu.|Tanima sureci kaydi.|Sube gorusme formu.|Hesap acilis gorusmesi.) (Basvuru
-    sahibi|Musteri adayi|Gorusulen kisi) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
-    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. [?0.6:(Adres|Beyan
-    edilen adres) {entity:ADDRESS}. ][?0.75:(Iletisim|Telefon) {id:PHONE}[?0.6:, (eposta|e-posta)
-    {id:EMAIL}]. ](Hesap|Vadesiz hesap|Acilan hesap) {id:IBAN} (olarak acildi|olarak tanimlandi)[?0.5:,
-    urun {lex:products_fictional}].[?0.4: (Kart|Banka karti) {id:PAN} olarak tanimlandi.][?0.65:
-    (Isyeri|Calistigi kurum) {entity:ORG}[?0.6:, (kurumsal vergi numarasi|vergi numarasi)
-    {id:VKN}].][?special: (Gorusmede|Formda) {entity:CRIMINAL} beyani alindi.][?special:
-    (Ayrica|Dosyaya) {entity:HEALTH} notu eklendi.] (Belgeler teslim alindi.|Kayit tamamlandi.|Dosya
+  text: '(Musteri gorusmesi notu.|Tanima sureci kaydi.) Basvuru sahibi {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    kimlik {id:TCKN}[?0.7:, dogum tarihi {entity:DOB}]. [?0.6:Adres {entity:ADDRESS}. ][?0.75:Iletisim {id:PHONE}, eposta {id:EMAIL}. ]Hesap {id:IBAN} olarak acildi[?0.5:,
+    urun {lex:products_fictional}].[?0.4: Kart {id:PAN} olarak tanimlandi.][?0.65: Isyeri {entity:ORG}, vergi numarasi {id:VKN}.][?special: Gorusmede {entity:CRIMINAL} beyani alindi.][?special:
+    Ayrica {entity:HEALTH} notu eklendi.] (Belgeler teslim alindi.|Kayit tamamlandi.|Dosya
     acildi.|Gorusme kapatildi.)'
 - id: eval_biometric_ref_union
   weight: '1'
-  text: '(Musteri gorusmesi notu.|Tanima sureci kaydi.|Sube gorusme formu.|Hesap acilis gorusmesi.) (Basvuru
-    sahibi|Musteri adayi|Gorusulen kisi) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
-    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. [?0.6:(Adres|Beyan
-    edilen adres) {entity:ADDRESS}. ][?0.75:(Iletisim|Telefon) {id:PHONE}[?0.6:, (eposta|e-posta)
-    {id:EMAIL}]. ](Hesap|Vadesiz hesap|Acilan hesap) {id:IBAN} (olarak acildi|olarak tanimlandi)[?0.5:,
-    urun {lex:products_fictional}].[?0.4: (Kart|Banka karti) {id:PAN} olarak tanimlandi.][?0.65:
-    (Isyeri|Calistigi kurum) {entity:ORG}[?0.6:, (kurumsal vergi numarasi|vergi numarasi)
-    {id:VKN}].][?special: (Gorusmede|Formda) {entity:BIOMETRIC_REF} beyani alindi.][?special:
-    (Ayrica|Dosyaya) {entity:UNION} notu eklendi.] (Belgeler teslim alindi.|Kayit tamamlandi.|Dosya
+  text: '(Musteri gorusmesi notu.|Tanima sureci kaydi.) Basvuru sahibi {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    kimlik {id:TCKN}[?0.7:, dogum tarihi {entity:DOB}]. [?0.6:Adres {entity:ADDRESS}. ][?0.75:Iletisim {id:PHONE}, eposta {id:EMAIL}. ]Hesap {id:IBAN} olarak acildi[?0.5:,
+    urun {lex:products_fictional}].[?0.4: Kart {id:PAN} olarak tanimlandi.][?0.65: Isyeri {entity:ORG}, vergi numarasi {id:VKN}.][?special: Gorusmede {entity:BIOMETRIC_REF} beyani alindi.][?special:
+    Ayrica {entity:UNION} notu eklendi.] (Belgeler teslim alindi.|Kayit tamamlandi.|Dosya
     acildi.|Gorusme kapatildi.)'
 - id: eval_sexual_life_political
   weight: '1'
-  text: '(Musteri gorusmesi notu.|Tanima sureci kaydi.|Sube gorusme formu.|Hesap acilis gorusmesi.) (Basvuru
-    sahibi|Musteri adayi|Gorusulen kisi) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
-    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. [?0.6:(Adres|Beyan
-    edilen adres) {entity:ADDRESS}. ][?0.75:(Iletisim|Telefon) {id:PHONE}[?0.6:, (eposta|e-posta)
-    {id:EMAIL}]. ](Hesap|Vadesiz hesap|Acilan hesap) {id:IBAN} (olarak acildi|olarak tanimlandi)[?0.5:,
-    urun {lex:products_fictional}].[?0.4: (Kart|Banka karti) {id:PAN} olarak tanimlandi.][?0.65:
-    (Isyeri|Calistigi kurum) {entity:ORG}[?0.6:, (kurumsal vergi numarasi|vergi numarasi)
-    {id:VKN}].][?special: (Gorusmede|Formda) {entity:SEXUAL_LIFE} beyani alindi.][?special:
-    (Ayrica|Dosyaya) {entity:POLITICAL} notu eklendi.] (Belgeler teslim alindi.|Kayit tamamlandi.|Dosya
+  text: '(Musteri gorusmesi notu.|Tanima sureci kaydi.) Basvuru sahibi {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    kimlik {id:TCKN}[?0.7:, dogum tarihi {entity:DOB}]. [?0.6:Adres {entity:ADDRESS}. ][?0.75:Iletisim {id:PHONE}, eposta {id:EMAIL}. ]Hesap {id:IBAN} olarak acildi[?0.5:,
+    urun {lex:products_fictional}].[?0.4: Kart {id:PAN} olarak tanimlandi.][?0.65: Isyeri {entity:ORG}, vergi numarasi {id:VKN}.][?special: Gorusmede {entity:SEXUAL_LIFE} beyani alindi.][?special:
+    Ayrica {entity:POLITICAL} notu eklendi.] (Belgeler teslim alindi.|Kayit tamamlandi.|Dosya
     acildi.|Gorusme kapatildi.)'

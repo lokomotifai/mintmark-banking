@@ -10,8 +10,8 @@ from __future__ import annotations
 import json
 import re
 import subprocess
-import tempfile
 import sys
+import tempfile
 from pathlib import Path
 
 import pytest
@@ -24,9 +24,6 @@ from mintmark.packs.model import load_pack
 ROOT = Path(__file__).resolve().parents[1]
 PACK = load_pack(ROOT)
 CORE_DENYLIST = load_denylist(asset_dir("denylist") / "institutions-tr.txt")
-# The pack list, not the core one. The core list is the payment systems
-# participant register, so it holds banks and nothing else, and this pack
-# invents names the register was never built to catch.
 PACK_DENYLIST = load_denylist(ROOT / "lexicons" / "denylist_extension.txt")
 
 
@@ -73,12 +70,9 @@ def test_the_pack_name_matches_the_repository() -> None:
 
 def test_the_core_pin_has_a_closed_upper_bound() -> None:
     """An open pin lets a future core change what a published manifest reproduces."""
-    assert PACK.requires_core.text == ">=0.2,<0.3"
-    assert PACK.requires_core.contains("0.2.0")
-    assert not PACK.requires_core.contains("0.3.0")
-    assert not PACK.requires_core.contains("0.1.3"), (
-        "0.1.x moved emitted bytes relative to 0.2.0; a pin that spans both is not a pin"
-    )
+    assert PACK.requires_core.text == ">=0.3,<0.4"
+    assert PACK.requires_core.contains("0.3.0")
+    assert not PACK.requires_core.contains("0.4.0")
 
 
 def test_the_locale_is_turkish() -> None:
@@ -155,9 +149,8 @@ def test_every_lexicon_carries_a_source_note(name: str) -> None:
 
 def test_the_pack_denylist_covers_the_core_one() -> None:
     """Packs may extend the list and may never shrink it."""
-    extension = load_denylist(ROOT / "lexicons" / "denylist_extension.txt")
-    assert extension.covers(CORE_DENYLIST), (
-        f"missing from the pack list: {sorted(extension.missing_from(CORE_DENYLIST))[:5]}"
+    assert PACK_DENYLIST.covers(CORE_DENYLIST), (
+        f"missing from the pack list: {sorted(PACK_DENYLIST.missing_from(CORE_DENYLIST))[:5]}"
     )
 
 
@@ -167,6 +160,11 @@ def test_no_template_names_a_real_institution() -> None:
     )
     hits = [hit.render() for hit in PACK_DENYLIST.scan(text)]
     assert not hits, "\n".join(hits)
+
+
+@pytest.mark.parametrize("obfuscated", ["A\u200bkbank", "S\u0327ekerbank"])
+def test_unicode_obfuscation_cannot_bypass_the_pack_denylist(obfuscated: str) -> None:
+    assert PACK_DENYLIST.scan(obfuscated)
 
 
 # Recipes.
@@ -217,12 +215,25 @@ def minted(tmp_path_factory: pytest.TempPathFactory) -> Path:
             "customer": 120,
             "account": 200,
             "card": 90,
-            "transaction": 600,
+            "transaction": 1600,
             "complaint_ticket": 40,
             "kyc_note": 30,
             "support_transcript": 30,
         },
         invocation="pytest",
+    )
+    return out
+
+
+@pytest.fixture(scope="module")
+def evaluation_minted(tmp_path_factory: pytest.TempPathFactory) -> Path:
+    out = tmp_path_factory.mktemp("evaluation-pack") / "run"
+    mint(
+        pack=ROOT,
+        recipe="pii-eval",
+        seed=20260902,
+        out=out,
+        invocation="pytest safety gate",
     )
     return out
 
@@ -253,6 +264,14 @@ def test_no_real_institution_appears_in_minted_output(minted: Path) -> None:
     assert not hits, "\n".join(hits)
 
 
+def test_no_real_institution_appears_in_evaluation_output(evaluation_minted: Path) -> None:
+    text = "\n".join(
+        path.read_text(encoding="utf-8") for path in sorted(evaluation_minted.glob("*.jsonl"))
+    )
+    hits = [hit.render() for hit in PACK_DENYLIST.scan(text)]
+    assert not hits, "\n".join(hits[:10])
+
+
 def test_every_reference_resolves(minted: Path) -> None:
     def ids(name: str, field: str) -> set[str]:
         return {
@@ -268,6 +287,30 @@ def test_every_reference_resolves(minted: Path) -> None:
     for name in ("card", "transaction"):
         for line in (minted / f"{name}.jsonl").read_text(encoding="utf-8").splitlines():
             assert json.loads(line)["account_id"] in accounts
+
+
+def test_every_parent_respects_declared_relationship_bounds(minted: Path) -> None:
+    account_rows = [
+        json.loads(line) for line in (minted / "account.jsonl").read_text().splitlines()
+    ]
+    transaction_rows = [
+        json.loads(line) for line in (minted / "transaction.jsonl").read_text().splitlines()
+    ]
+    accounts_per_customer = {
+        customer: sum(row["customer_id"] == customer for row in account_rows)
+        for customer in {
+            json.loads(line)["customer_id"]
+            for line in (minted / "customer.jsonl").read_text().splitlines()
+        }
+    }
+    transactions_per_account = {
+        account["account_id"]: sum(
+            row["account_id"] == account["account_id"] for row in transaction_rows
+        )
+        for account in account_rows
+    }
+    assert all(1 <= count <= 3 for count in accounts_per_customer.values())
+    assert all(8 <= count <= 28 for count in transactions_per_account.values())
 
 
 def test_pans_are_emitted_masked(minted: Path) -> None:
@@ -318,18 +361,15 @@ def test_packcheck_passes_against_the_pinned_core() -> None:
 
 # Sample freshness.
 
-SAMPLE_COUNTS = dict.fromkeys(
-    [
-        "customer",
-        "account",
-        "card",
-        "transaction",
-        "complaint_ticket",
-        "kyc_note",
-        "support_transcript",
-    ],
-    50,
-)
+SAMPLE_COUNTS = {
+    "customer": 6,
+    "account": 6,
+    "card": 3,
+    "transaction": 48,
+    "complaint_ticket": 6,
+    "kyc_note": 6,
+    "support_transcript": 6,
+}
 
 
 def test_samples_regenerate_to_the_same_bytes(tmp_path: Path) -> None:
@@ -428,16 +468,18 @@ def test_each_readme_names_the_release_state_truthfully(path: Path) -> None:
     real state too, and the README may hold it by saying so.
     """
     text = path.read_text(encoding="utf-8")
-    linked = set(re.findall(r"/releases/tag/v(\d+\.\d+\.\d+)", text))
-    assert linked <= {PACK.version}, (
-        f"{path.name} links releases {sorted(linked - {PACK.version})} while the pack "
-        f"is {PACK.version}. A link to a superseded tag reads as current."
-    )
-    if PACK.version not in linked:
-        assert "not tagged yet" in text or "henüz etiketlenmedi" in text, (
-            f"{path.name} neither links v{PACK.version} nor says it is untagged. A "
-            "version prepared but not cut is a real state and has to be stated."
+    assert PACK.version in text, f"{path.name} does not name current version {PACK.version}"
+    development = "under development" in text or "geliştirme aşamasındadır" in text
+    current_release = f"/releases/tag/v{PACK.version}" in text
+    assert development or current_release
+    linked = re.findall(r"/releases/tag/v(\d+\.\d+\.\d+)", text)
+    assert linked, f"{path.name} no longer links the latest published release"
+    if development:
+        assert PACK.version not in linked, (
+            "an unreleased version must not be presented as published"
         )
+    else:
+        assert PACK.version in linked, "the current release is not the linked published version"
 
 
 @pytest.mark.parametrize("path", [README_EN, README_TR], ids=["en", "tr"])
@@ -453,8 +495,7 @@ def test_each_readme_installs_the_engine_from_where_it_now_lives(path: Path) -> 
         f"{path.name} does not link the published engine"
     )
     assert "git+https://github.com/lokomotifai/mintmark" not in text, (
-        f"{path.name} still installs from git, which was the workaround for not "
-        f"being on an index"
+        f"{path.name} still installs from git, which was the workaround for not being on an index"
     )
 
 
@@ -492,9 +533,7 @@ def test_the_pack_version_is_part_of_what_seeds_the_streams(tmp_path: Path) -> N
     )
     manifest = rolled_back / "pack.yaml"
     manifest.write_text(
-        manifest.read_text(encoding="utf-8").replace(
-            f"version: {PACK.version}", "version: 9.9.9"
-        ),
+        manifest.read_text(encoding="utf-8").replace(f"version: {PACK.version}", "version: 9.9.9"),
         encoding="utf-8",
     )
 
@@ -504,7 +543,15 @@ def test_the_pack_version_is_part_of_what_seeds_the_streams(tmp_path: Path) -> N
         recipe="retail-baseline",
         seed=1,
         out=out,
-        records={"customer": 20},
+        records={
+            "customer": 20,
+            "account": 0,
+            "card": 0,
+            "transaction": 0,
+            "complaint_ticket": 0,
+            "kyc_note": 0,
+            "support_transcript": 0,
+        },
         invocation="pytest",
     )
     changed = (out / "customer.jsonl").read_bytes()
@@ -595,9 +642,15 @@ def evaluation_mint(tmp_path_factory: pytest.TempPathFactory) -> Path:
         recipe="pii-eval",
         seed=11,
         out=out,
-        records={"customer": 40, "account": 40, "card": 20, "transaction": 40,
-            "complaint_ticket_eval": 0, "kyc_note_eval": 200,
-            "support_transcript_eval": 0},
+        records={
+            "customer": 200,
+            "account": 200,
+            "card": 100,
+            "transaction": 1600,
+            "complaint_ticket_eval": 0,
+            "kyc_note_eval": 200,
+            "support_transcript_eval": 0,
+        },
         invocation="pytest",
     )
     return out

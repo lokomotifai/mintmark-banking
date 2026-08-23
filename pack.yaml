@@ -1,14 +1,11 @@
 schema_version: 1
 name: mintmark-banking
 version: 0.2.0
-requires_core: ">=0.2,<0.3"
+requires_core: ">=0.3,<0.4"
 locale: tr-TR
 allowed_identifier_policies: [safe]
 description: Synthetic Turkish retail banking records and span-labeled documents.
 description_tr: Sentetik Turkce bireysel bankacilik kayitlari ve etiketli belgeleri.
-# Surfaces this pack adds to an entity label, appended after the core's
-# curated list. A banking document names two kinds of organization: the
-# institution and the counterparty, so both lexicons feed ORG.
 entity_lexicons:
   ADDRESS: [mahalleler_tr, sokaklar_tr]
   ORG: [banks_fictional, counterparties_tr]

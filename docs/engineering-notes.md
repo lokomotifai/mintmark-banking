@@ -2,20 +2,13 @@
 
 Operational know-how for this repository. Committed, unlike the plan.
 
-## The core is pinned twice
+## The core wheel is bound to an immutable source revision
 
-`pack.yaml` declares `requires_core: ">=0.2,<0.3"`, which is the compatibility
-statement a consumer reads. Separately, `vendor/` carries a built core wheel with
-its SHA-256 in `vendor/CHECKSUMS`, and that is what required CI actually runs
-against, so the required checks need no network.
-
-The vendored artifact at this revision is `mintmark-0.2.0-py3-none-any.whl`. Both
-`vendor/CHECKSUMS` and `uv.lock` record its digest, and both live here and move in
-the same commit as the wheel, so neither is evidence about where the wheel came
-from. The weekly `core pin` workflow is the only check that reaches outside for an
-answer: it fetches the digest PyPI publishes for that exact version and compares.
-It used to print instructions and compare nothing while declaring `issues: write`
-and opening no issue, which is the failure mode this note now exists to prevent.
+`pack.yaml` requires Mintmark `>=0.3,<0.4`, while required CI installs the
+vendored `mintmark-0.3.0-py3-none-any.whl` whose SHA-256 is recorded in
+`vendor/CHECKSUMS`. The separated network workflow checks out core commit
+`499216efdc8d30ccb21d4a4a03a38b014b0ca870`, rebuilds it, and byte-compares that
+independently sourced wheel with the vendored artifact.
 
 On a mismatch, open an issue rather than replacing the wheel: a changed core
 changes emitted bytes, which is a version event rather than a refresh. Until
@@ -78,15 +71,17 @@ pattern that correlates rows, because each field comes from an independent
 stream.
 
 This is recorded in both READMEs rather than left for a user to discover. Genuine
-temporal shapes are a core change. If one lands, this pack's anomaly recipe
-changes with it and that is a major version event.
+temporal shapes are a core change. If one lands, the baseline contract changes
+with it and that is a major version event. A former `anomaly-mix` recipe was
+removed because it was byte-for-byte identical to the baseline and falsely
+implied that a recipe could alter field-level anomaly rates.
 
 ## Regenerating the samples
 
     mintmark mint --pack . --recipe retail-baseline --seed 1 \
-      --records customer=50 --records account=50 --records card=50 \
-      --records transaction=50 --records complaint_ticket=50 \
-      --records kyc_note=50 --records support_transcript=50 \
+      --records customer=6 --records account=6 --records card=3 \
+      --records transaction=48 --records complaint_ticket=6 \
+      --records kyc_note=6 --records support_transcript=6 \
       --out ./regenerated
 
 Then copy the JSONL files into `samples/`. The freshness test compares by bytes,

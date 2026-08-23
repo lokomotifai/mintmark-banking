@@ -7,9 +7,9 @@ These regenerate exactly:
 
 ```bash
 mintmark mint --pack . --recipe retail-baseline --seed 1 \
-  --records customer=50 --records account=50 --records card=50 \
-  --records transaction=50 --records complaint_ticket=50 \
-  --records kyc_note=50 --records support_transcript=50 \
+  --records customer=6 --records account=6 --records card=3 \
+  --records transaction=48 --records complaint_ticket=6 \
+  --records kyc_note=6 --records support_transcript=6 \
   --out ./regenerated
 ```
 
