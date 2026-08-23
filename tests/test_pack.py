@@ -469,10 +469,17 @@ def test_each_readme_names_the_release_state_truthfully(path: Path) -> None:
     """
     text = path.read_text(encoding="utf-8")
     assert PACK.version in text, f"{path.name} does not name current version {PACK.version}"
-    assert "under development" in text or "geliştirme aşamasındadır" in text
+    development = "under development" in text or "geliştirme aşamasındadır" in text
+    current_release = f"/releases/tag/v{PACK.version}" in text
+    assert development or current_release
     linked = re.findall(r"/releases/tag/v(\d+\.\d+\.\d+)", text)
     assert linked, f"{path.name} no longer links the latest published release"
-    assert PACK.version not in linked, "an unreleased version must not be presented as published"
+    if development:
+        assert PACK.version not in linked, (
+            "an unreleased version must not be presented as published"
+        )
+    else:
+        assert PACK.version in linked, "the current release is not the linked published version"
 
 
 @pytest.mark.parametrize("path", [README_EN, README_TR], ids=["en", "tr"])
@@ -488,8 +495,7 @@ def test_each_readme_installs_the_engine_from_where_it_now_lives(path: Path) -> 
         f"{path.name} does not link the published engine"
     )
     assert "git+https://github.com/lokomotifai/mintmark" not in text, (
-        f"{path.name} still installs from git, which was the workaround for not "
-        f"being on an index"
+        f"{path.name} still installs from git, which was the workaround for not being on an index"
     )
 
 
@@ -527,9 +533,7 @@ def test_the_pack_version_is_part_of_what_seeds_the_streams(tmp_path: Path) -> N
     )
     manifest = rolled_back / "pack.yaml"
     manifest.write_text(
-        manifest.read_text(encoding="utf-8").replace(
-            f"version: {PACK.version}", "version: 9.9.9"
-        ),
+        manifest.read_text(encoding="utf-8").replace(f"version: {PACK.version}", "version: 9.9.9"),
         encoding="utf-8",
     )
 
@@ -657,9 +661,7 @@ def test_the_evaluation_documents_are_not_one_sentence_repeated(evaluation_mint:
     entity at a fixed offset behind a fixed cue word. A gazetteer and six regular
     expressions scored near perfectly on it, which says nothing about production."""
     bodies = {}
-    for line in (
-        (evaluation_mint / "kyc_note_eval.jsonl").read_text(encoding="utf-8").splitlines()
-    ):
+    for line in (evaluation_mint / "kyc_note_eval.jsonl").read_text(encoding="utf-8").splitlines():
         if line.strip():
             record = json.loads(line)
             key = next(v for k, v in record.items() if k.endswith("_id"))
