@@ -70,8 +70,9 @@ def test_the_pack_name_matches_the_repository() -> None:
 
 def test_the_core_pin_has_a_closed_upper_bound() -> None:
     """An open pin lets a future core change what a published manifest reproduces."""
-    assert PACK.requires_core.text == ">=0.3,<0.4"
-    assert PACK.requires_core.contains("0.3.0")
+    assert PACK.requires_core.text == ">=0.3.1,<0.4"
+    assert not PACK.requires_core.contains("0.3.0")
+    assert PACK.requires_core.contains("0.3.1")
     assert not PACK.requires_core.contains("0.4.0")
 
 

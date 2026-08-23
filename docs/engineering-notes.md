@@ -4,10 +4,10 @@ Operational know-how for this repository. Committed, unlike the plan.
 
 ## The core wheel is bound to an immutable source revision
 
-`pack.yaml` requires Mintmark `>=0.3,<0.4`, while required CI installs the
-vendored `mintmark-0.3.0-py3-none-any.whl` whose SHA-256 is recorded in
+`pack.yaml` requires Mintmark `>=0.3.1,<0.4`, while required CI installs the
+vendored `mintmark-0.3.1-py3-none-any.whl` whose SHA-256 is recorded in
 `vendor/CHECKSUMS`. The separated network workflow checks out core commit
-`499216efdc8d30ccb21d4a4a03a38b014b0ca870`, rebuilds it, and byte-compares that
+`8017e894210c1f3649e66b0ac0fe8e0af18d0a3b`, rebuilds it, and byte-compares that
 independently sourced wheel with the vendored artifact.
 
 On a mismatch, open an issue rather than replacing the wheel: a changed core
@@ -18,8 +18,8 @@ can verify.
 
 ## The vendored wheel is the published one
 
-`vendor/` carries `mintmark-0.2.0-py3-none-any.whl` at SHA-256
-`cc1584375eb5be3fa175d690064a050e5325bafd624e60ddbc745464f4d0ac29`, which is the
+`vendor/` carries `mintmark-0.3.1-py3-none-any.whl` at SHA-256
+`227b1dd727ddf971bed404a8d2248e58a8cc06bba72085c596d93aee259166b5`, which is the
 digest PyPI serves for that version. The core builds with `uv build` from a
 locked backend, and that build turned out to be reproducible: the wheel built
 here before the release and the wheel the release workflow published are the same
