@@ -1,9 +1,12 @@
-# Pack denylist extension. Inherits the core list in full and may only grow.
+# Pack denylist extension. One list across the pack family: the core's banks,
+# every real insurer, and every real holding and industrial company a fictional
+# name in any of these packs could land on. It may only grow.
 #
-# The banking pack adds no entries beyond the core's at this revision: the
-# core list is already built from the TCMB participant register, which is the
-# authoritative record of licensed banks. An entry is added here when a
-# banking-specific institution appears that the core list does not carry.
+# It is one list because the packs invent the same kinds of name. This pack
+# invents employers, the banking pack invents counterparties, the insurance pack
+# invents corporate insureds, and a list built for one of those cannot catch a
+# collision in another. Each pack scans its own lexicons, its own templates, and
+# its own minted output against this file rather than against the core's.
 #
 # Real Turkish financial institutions. A generated name must never collide
 # with any entry here. Packs may extend this list and may never shrink it.
@@ -93,3 +96,128 @@ vakiflar bankasi    # T. VAKIFLAR BANKASI T.A.O.
 yapi ve kredi bankasi    # YAPI VE KREDİ BANKASI A.Ş.
 ziraat    # T.C. ZİRAAT BANKASI A.Ş.
 ziraat dinamik    # ZİRAAT DİNAMİK BANKA A.Ş.
+
+# Real Turkish insurance, reinsurance, and pension companies.
+#
+# Added by the insurance pack. The core list is built from the payment systems
+# participant register, which lists banks, so it cannot catch a collision with
+# an insurer. One was already in this pack's fictional lexicon before this list
+# existed: Bereket Sigorta is a real company, incorporated 1995. It reached the
+# fictional list because 'bereket' reads as an ordinary Turkish word.
+#
+# Source: a public compilation of Turkish insurance companies, cross-checked
+# against individual company records. Retrieved 2026-08-22. The Turkish
+# insurance association publishes the authoritative member list, but its page
+# renders client side and could not be read programmatically; that limitation
+# is recorded in docs/normative-verification.md rather than papered over.
+
+ak sigorta    # Ak Sigorta
+allianz    # Allianz Sigorta
+ana sigorta    # Ana Sigorta
+anadolu sigorta    # Anadolu Sigorta
+ankara sigorta    # Ankara Sigorta
+atlas mutel sigorta    # Atlas Mutel Sigorta
+atradius    # Atradius Sigorta
+axa sigorta    # Axa Sigorta
+bereket sigorta    # Bereket Sigorta
+bereket tekaful sigorta    # Bereket Tekaful Sigorta
+bnp paribas cardif    # BNP Paribas Cardif Sigorta
+bupa acibadem    # Bupa Acibadem Sigorta
+coface    # Coface Sigorta
+corpus    # Corpus Sigorta
+doga sigorta    # Doga Sigorta
+dubai sigorta    # Dubai Sigorta
+ethica    # Ethica Sigorta
+eulerhermes    # Eulerhermes Sigorta
+eurekao    # Eurekao Sigorta
+generali    # Generali Sigorta
+gri sigorta    # GRI Sigorta
+groupama    # Groupama Sigorta
+gulf sigorta    # Gulf Sigorta
+hdi sigorta    # HDI Sigorta
+koru sigorta    # Koru Sigorta
+magdeburger    # Magdeburger Sigorta
+mapfre    # Mapfre Sigorta
+merkez sigorta    # Merkez Sigorta
+neova    # Neova Sigorta
+orient sigorta    # Orient Sigorta
+quick sigorta    # Quick Sigorta
+ray sigorta    # Ray Sigorta
+seker sigorta    # Seker Sigorta
+sompo    # Sompo Sigorta
+tmt sigorta    # TMT Sigorta
+turk nippon    # Turk Nippon Sigorta
+turk pandi    # Turk Pandi Sigorta
+turkiye sigorta    # Turkiye Sigorta
+unico    # Unico Sigorta
+zurich    # Zurich Sigorta
+
+# Well-known real Turkish corporates and holdings.
+#
+# Added by the HR pack, whose invented employers are corporate names rather than
+# financial institutions, so neither the banking nor the insurance list covers
+# them.
+#
+# Source: a compilation of widely known Turkish corporates and holdings, checked
+# individually. Retrieved 2026-08-22. The exchange publishes the authoritative
+# listing, which was not available as a machine-readable public endpoint from
+# here; that limitation is recorded in docs/normative-verification.md rather than
+# papered over.
+#
+# A name whose distinctive part is an ordinary Turkish word keeps the whole
+# company name. The rule is checked against the core's own given-name, surname,
+# province, and street lexicons, because the first cut reduced `Dogan Holding` to
+# `dogan` and fired on every synthetic person named Dogan. A denylist that flags
+# the pack's own people is a denylist somebody switches off.
+
+akcansa    # Akcansa
+akfen    # Akfen Holding
+aksa akrilik    # Aksa Akrilik
+alarko    # Alarko Holding
+anadolu efes    # Anadolu Efes
+arcelik    # Arcelik
+aselsan    # Aselsan
+aygaz    # Aygaz
+bagfas    # Bagfas
+bim birlesik magazalar    # BIM Birlesik Magazalar
+borusan    # Borusan Holding
+brisa    # Brisa
+cimsa    # Cimsa
+dogan holding    # Dogan Holding
+eczacibasi    # Eczacibasi Holding
+enka insaat    # Enka Insaat
+eregli demir celik    # Eregli Demir Celik
+ford otosan    # Ford Otosan
+gubretas    # Gubretas
+hektas    # Hektas
+indeks bilgisayar    # Indeks Bilgisayar
+karsan otomotiv    # Karsan Otomotiv
+koc holding    # Koc Holding
+kordsa    # Kordsa
+logo yazilim    # Logo Yazilim
+migros    # Migros Ticaret
+netas    # Netas
+opet    # Opet
+otokar    # Otokar
+pegasus hava tasimaciligi    # Pegasus Hava Tasimaciligi
+petkim    # Petkim
+sabanci    # Sabanci Holding
+sasa polyester    # Sasa Polyester
+sisecam    # Sisecam
+soda sanayii    # Soda Sanayii
+sok marketler    # Sok Marketler
+tav havalimanlari    # TAV Havalimanlari
+tekfen    # Tekfen Holding
+tofas    # Tofas
+toros tarim    # Toros Tarim
+trakya cam    # Trakya Cam
+tupras    # Tupras
+turk hava yollari    # Turk Hava Yollari
+turk telekom    # Turk Telekom
+turk traktor    # Turk Traktor
+turkcell    # Turkcell
+turkiye petrol rafinerileri    # Turkiye Petrol Rafinerileri
+ulker biskuvi    # Ulker Biskuvi
+vestel    # Vestel
+yildiz holding    # Yildiz Holding
+zorlu    # Zorlu Holding
