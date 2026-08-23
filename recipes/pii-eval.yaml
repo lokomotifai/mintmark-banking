@@ -4,7 +4,7 @@ records:
   customer: 900
   account: 900
   card: 400
-  transaction: 900
+  transaction: 7200
   complaint_ticket: 0
   kyc_note: 0
   support_transcript: 0
@@ -14,11 +14,6 @@ records:
 date_window:
   start: "2026-01-01T00:00:00+00:00"
   end: "2026-12-31T23:59:59+00:00"
-doc_mix:
-  complaints_eval: "0.4"
-  kyc_notes_eval: "0.3"
-  transcripts_eval: "0.3"
-  txn_descriptions: "1"
 special_rate: "1"
 coverage_targets:
   PERSON: 300

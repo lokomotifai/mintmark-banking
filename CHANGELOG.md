@@ -15,6 +15,18 @@ from, so raising the version is itself such a change. Version and content
 correspond exactly, which is the point. The pack digest is a separate record of
 which declarations produced a dataset and seeds nothing.
 
+## 0.2.0 - Unreleased
+
+### Security
+
+- Require the audited Mintmark 0.3 core and safe identifier policy, bind the
+  vendored wheel to immutable source, and pin CI dependencies.
+- Enforce feasible customer-account-transaction cardinalities and extend the
+  evaluation transaction count so every account receives its declared minimum.
+- Remove ignored document-mix keys and make every domain lexicon reachable.
+- Exhaustively scan declaration branches and rendered output with the pack
+  denylist, including Unicode-obfuscated names and checksum-valid literals.
+
 ## 0.1.2 - 2026-08-22
 
 ### Added

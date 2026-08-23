@@ -10,4 +10,4 @@ entries:
   text: '{field:transaction.counterparty_name} isyerinde (kart|temassiz) ile alisveris[?0.3: , taksitli].'
 - id: fatura
   weight: '0.20'
-  text: Fatura odemesi (tamamlandi|gerceklesti)[?0.35:, referans {id:VKN}].
+  text: '{lex:products_fictional} icin fatura odemesi (tamamlandi|gerceklesti)[?0.35:, referans {id:VKN}].'

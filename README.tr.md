@@ -14,12 +14,12 @@
 <p align="center">
   <a href="https://github.com/lokomotifai/mintmark-banking/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/lokomotifai/mintmark-banking/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
   <img alt="Sıfır motor kodu" src="https://img.shields.io/badge/motor%20kodu-yok-3C873A?style=flat-square">
-  <a href="https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2"><img alt="Sürüm v0.1.2" src="https://img.shields.io/badge/sürüm-v0.1.2-3C873A?style=flat-square"></a>
+  <img alt="Geliştirme sürümü 0.2.0" src="https://img.shields.io/badge/geliştirme-v0.2.0-C98A2B?style=flat-square">
   <a href="LICENSE"><img alt="Apache-2.0 lisansı" src="https://img.shields.io/badge/lisans-Apache--2.0-3B3F46?style=flat-square"></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/lokomotifai/mintmark"><img alt="Mintmark çekirdeğini gerektirir" src="https://img.shields.io/badge/çekirdek-%3E%3D0.1%2C%3C0.2-17191F?style=flat-square"></a>
+  <a href="https://github.com/lokomotifai/mintmark"><img alt="Mintmark çekirdeğini gerektirir" src="https://img.shields.io/badge/çekirdek-%3E%3D0.3%2C%3C0.4-17191F?style=flat-square"></a>
   <img alt="Yedi kayıt tipi" src="https://img.shields.io/badge/kayıt%20tipi-7-17191F?style=flat-square">
   <img alt="Üç tarif" src="https://img.shields.io/badge/tarif-3-17191F?style=flat-square">
   <img alt="26 kurgusal banka adı" src="https://img.shields.io/badge/kurgusal%20banka-26-D11F26?style=flat-square">
@@ -50,9 +50,9 @@ makul olarak isteyemez. Bu paket o ortamların ihtiyaç duyduğu veriyi beyan ed
 motor da basar: deterministik, span düzeyinde etiketli ve herkesin
 denetleyebileceği bir manifestoyla mühürlenmiş.
 
-**Sürüm 0.1.2. İki referans veri kümesi
-[v0.1.2 sürümüne](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2) ekli olarak
-yayımlandı; her biri künyesini ve sağlamalarını taşıyor.** Bugün doğru olan: `packcheck` sabitlenmiş çekirdeğe karşı
+**Geliştirme sürümü 0.2.0. En son yayımlanan referans veri kümeleri
+[v0.1.2 sürümünde](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2) kalır;
+bu depo değişikliği 0.2.0 veri kümesi yayımlamaz.** Bugün doğru olan: `packcheck` sabitlenmiş çekirdeğe karşı
 geçiyor, test paketi geçiyor ve değerlendirme tarifi on sekiz kapsam hedefinin
 hepsini tutturuyor.
 
@@ -103,11 +103,11 @@ temsil etmek yerine derlemeyi düşürür.
 Üretildiği hâliyle bir şikâyet metni:
 
 ```
-Sayin yetkili, Hasan Yılmaz adima kayitli hesabimla ilgili bir
-sorun yasiyorum. kart konusunda defalarca basvurmama ragmen cozum
-alamadim. Kimlik numaram 97978600710, hesabim
-TR379999903250607630343066. Adresim Gültepe Mahallesi,
-ulasilabilecegim numara +90 583 703 41 67. Konunun
+Sayin yetkili, Meryem Şimşek adima kayitli hesabimla ilgili bir
+sorun yasiyorum. kredi konusunda, sube yogunlugu basliginda birkac
+kez basvurmama ragmen cozum alamadim. Kimlik numaram 45797577307,
+hesabim TR439999902711375762415596. Adresim Fatih Mahallesi,
+ulasilabilecegim numara +90 592 647 78 19. Konunun
 degerlendirilmesini ve tarafima geri donus yapilmasini rica
 ederim.
 ```
@@ -233,8 +233,8 @@ koştuğu artefakt kadar iyidir.
 
 ## Proje durumu
 
-Sürüm 0.1.2, yayımlandı. İki referans veri kümesi
-[v0.1.2](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2) sürümüne ekli;
+Sürüm 0.2.0 geliştirme aşamasındadır. En son yayımlanan iki referans veri kümesi
+[v0.1.2](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2) sürümünde kalır;
 [docs/reference-datasets.json](docs/reference-datasets.json) içinde bildirilen
 tohumlarla ve güvenli kimlik politikasıyla üretildiler. Motor PyPI'de
 [`mintmark`](https://pypi.org/project/mintmark/) olarak yayımlanmıştır.

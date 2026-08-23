@@ -2,18 +2,13 @@
 
 Operational know-how for this repository. Committed, unlike the plan.
 
-## The core is pinned twice
+## The core wheel is bound to an immutable source revision
 
-`pack.yaml` declares `requires_core: ">=0.1,<0.2"`, which is the compatibility
-statement a consumer reads. Separately, `vendor/` carries a built core wheel with
-its SHA-256 in `vendor/CHECKSUMS`, and that is what required CI actually runs
-against, so the required checks need no network.
-
-The vendored artifact at this revision is `mintmark-0.1.0.dev1-py3-none-any.whl`,
-built from the core repository at the commit that introduced the
-`derived:flag_unless` rule. A separated, network-labeled workflow compares the two
-weekly. On a mismatch, open an issue rather than replacing the wheel: a changed
-core changes emitted bytes, which is a version event rather than a refresh.
+`pack.yaml` requires Mintmark `>=0.3,<0.4`, while required CI installs the
+vendored `mintmark-0.3.0-py3-none-any.whl` whose SHA-256 is recorded in
+`vendor/CHECKSUMS`. The separated network workflow checks out core commit
+`499216efdc8d30ccb21d4a4a03a38b014b0ca870`, rebuilds it, and byte-compares that
+independently sourced wheel with the vendored artifact.
 
 ## Why there are evaluation twins of the document types
 
@@ -63,9 +58,9 @@ changes with it and that is a major version event.
 ## Regenerating the samples
 
     mintmark mint --pack . --recipe retail-baseline --seed 1 \
-      --records customer=50 --records account=50 --records card=50 \
-      --records transaction=50 --records complaint_ticket=50 \
-      --records kyc_note=50 --records support_transcript=50 \
+      --records customer=6 --records account=6 --records card=3 \
+      --records transaction=48 --records complaint_ticket=6 \
+      --records kyc_note=6 --records support_transcript=6 \
       --out ./regenerated
 
 Then copy the JSONL files into `samples/`. The freshness test compares by bytes,

@@ -14,12 +14,12 @@
 <p align="center">
   <a href="https://github.com/lokomotifai/mintmark-banking/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/lokomotifai/mintmark-banking/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
   <img alt="Zero engine code" src="https://img.shields.io/badge/engine%20code-none-3C873A?style=flat-square">
-  <a href="https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2"><img alt="Release v0.1.2" src="https://img.shields.io/badge/release-v0.1.2-3C873A?style=flat-square"></a>
+  <img alt="Development version 0.2.0" src="https://img.shields.io/badge/development-v0.2.0-C98A2B?style=flat-square">
   <a href="LICENSE"><img alt="Apache-2.0 license" src="https://img.shields.io/badge/license-Apache--2.0-3B3F46?style=flat-square"></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/lokomotifai/mintmark"><img alt="Requires the Mintmark core" src="https://img.shields.io/badge/core-%3E%3D0.1%2C%3C0.2-17191F?style=flat-square"></a>
+  <a href="https://github.com/lokomotifai/mintmark"><img alt="Requires the Mintmark core" src="https://img.shields.io/badge/core-%3E%3D0.3%2C%3C0.4-17191F?style=flat-square"></a>
   <img alt="Seven record types" src="https://img.shields.io/badge/record%20types-7-17191F?style=flat-square">
   <img alt="Three recipes" src="https://img.shields.io/badge/recipes-3-17191F?style=flat-square">
   <img alt="26 fictional bank names" src="https://img.shields.io/badge/fictional%20banks-26-D11F26?style=flat-square">
@@ -49,9 +49,9 @@ AI pilot environments without KVKK exposure, and their vendors cannot reasonably
 ask them to. This pack declares the data those environments need, and the engine
 mints it: deterministic, span-labeled, and sealed by a manifest anyone can check.
 
-**Version 0.1.2. Two reference datasets are published as assets on
-[v0.1.2](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2), each
-carrying its own manifest and checksums.** What is true today: `packcheck` passes against
+**Development version 0.2.0. The latest published reference datasets remain on
+[v0.1.2](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2); no 0.2.0
+dataset is published by this repository change.** What is true today: `packcheck` passes against
 the pinned core, the test suite passes, and the evaluation recipe meets every one of its
 eighteen coverage targets.
 
@@ -102,11 +102,11 @@ than quietly misrepresenting them.
 One complaint body, as emitted:
 
 ```
-Sayin yetkili, Hasan Yılmaz adima kayitli hesabimla ilgili bir
-sorun yasiyorum. kart konusunda defalarca basvurmama ragmen cozum
-alamadim. Kimlik numaram 97978600710, hesabim
-TR379999903250607630343066. Adresim Gültepe Mahallesi,
-ulasilabilecegim numara +90 583 703 41 67. Konunun
+Sayin yetkili, Meryem Şimşek adima kayitli hesabimla ilgili bir
+sorun yasiyorum. kredi konusunda, sube yogunlugu basliginda birkac
+kez basvurmama ragmen cozum alamadim. Kimlik numaram 45797577307,
+hesabim TR439999902711375762415596. Adresim Fatih Mahallesi,
+ulasilabilecegim numara +90 592 647 78 19. Konunun
 degerlendirilmesini ve tarafima geri donus yapilmasini rica
 ederim.
 ```
@@ -231,8 +231,8 @@ as the artifact it runs against.
 
 ## Project status
 
-Version 0.1.2, released. Two reference datasets are attached to
-[v0.1.2](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2), minted with the
+Version 0.2.0 is under development. The latest published reference datasets remain attached to
+[v0.1.2](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2); they were minted with the
 safe identifier policy at the seeds declared in
 [docs/reference-datasets.json](docs/reference-datasets.json). The engine is on PyPI as
 [`mintmark`](https://pypi.org/project/mintmark/).

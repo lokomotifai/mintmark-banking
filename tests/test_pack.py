@@ -23,6 +23,7 @@ from mintmark.packs.model import load_pack
 ROOT = Path(__file__).resolve().parents[1]
 PACK = load_pack(ROOT)
 CORE_DENYLIST = load_denylist(asset_dir("denylist") / "institutions-tr.txt")
+PACK_DENYLIST = load_denylist(ROOT / "lexicons" / "denylist_extension.txt")
 
 
 # The pack contains no engine code, and its Python imports only the public API.
@@ -68,9 +69,9 @@ def test_the_pack_name_matches_the_repository() -> None:
 
 def test_the_core_pin_has_a_closed_upper_bound() -> None:
     """An open pin lets a future core change what a published manifest reproduces."""
-    assert PACK.requires_core.text == ">=0.1,<0.2"
-    assert PACK.requires_core.contains("0.1.0")
-    assert not PACK.requires_core.contains("0.2.0")
+    assert PACK.requires_core.text == ">=0.3,<0.4"
+    assert PACK.requires_core.contains("0.3.0")
+    assert not PACK.requires_core.contains("0.4.0")
 
 
 def test_the_locale_is_turkish() -> None:
@@ -124,7 +125,7 @@ def test_every_label_used_is_in_the_closed_taxonomy() -> None:
 
 
 def test_at_least_twenty_four_fictional_bank_names() -> None:
-    banks = PACK.lexicons["banks_fictional"]["values"]
+    banks = PACK.lexicons["banks_fictional"]
     assert len(banks) >= 24, f"the brief settles at least 24, found {len(banks)}"
 
 
@@ -134,7 +135,7 @@ def test_every_lexicon_entry_passes_the_denylist(name: str) -> None:
     hits = [
         hit.render()
         for value in document.get("values", [])
-        for hit in CORE_DENYLIST.scan(str(value))
+        for hit in PACK_DENYLIST.scan(str(value))
     ]
     assert not hits, "\n".join(hits)
 
@@ -147,9 +148,8 @@ def test_every_lexicon_carries_a_source_note(name: str) -> None:
 
 def test_the_pack_denylist_covers_the_core_one() -> None:
     """Packs may extend the list and may never shrink it."""
-    extension = load_denylist(ROOT / "lexicons" / "denylist_extension.txt")
-    assert extension.covers(CORE_DENYLIST), (
-        f"missing from the pack list: {sorted(extension.missing_from(CORE_DENYLIST))[:5]}"
+    assert PACK_DENYLIST.covers(CORE_DENYLIST), (
+        f"missing from the pack list: {sorted(PACK_DENYLIST.missing_from(CORE_DENYLIST))[:5]}"
     )
 
 
@@ -157,8 +157,13 @@ def test_no_template_names_a_real_institution() -> None:
     text = "\n".join(
         p.read_text(encoding="utf-8") for p in sorted((ROOT / "templates").rglob("*.yaml"))
     )
-    hits = [hit.render() for hit in CORE_DENYLIST.scan(text)]
+    hits = [hit.render() for hit in PACK_DENYLIST.scan(text)]
     assert not hits, "\n".join(hits)
+
+
+@pytest.mark.parametrize("obfuscated", ["A\u200bkbank", "S\u0327ekerbank"])
+def test_unicode_obfuscation_cannot_bypass_the_pack_denylist(obfuscated: str) -> None:
+    assert PACK_DENYLIST.scan(obfuscated)
 
 
 # Recipes.
@@ -202,19 +207,32 @@ def minted(tmp_path_factory: pytest.TempPathFactory) -> Path:
     out = tmp_path_factory.mktemp("pack") / "run"
     mint(
         pack=ROOT,
-        recipe="retail-baseline",
+        recipe="anomaly-mix",
         seed=1,
         out=out,
         records={
             "customer": 120,
             "account": 200,
             "card": 90,
-            "transaction": 600,
+            "transaction": 1600,
             "complaint_ticket": 40,
             "kyc_note": 30,
             "support_transcript": 30,
         },
         invocation="pytest",
+    )
+    return out
+
+
+@pytest.fixture(scope="module")
+def evaluation_minted(tmp_path_factory: pytest.TempPathFactory) -> Path:
+    out = tmp_path_factory.mktemp("evaluation-pack") / "run"
+    mint(
+        pack=ROOT,
+        recipe="pii-eval",
+        seed=20260902,
+        out=out,
+        invocation="pytest safety gate",
     )
     return out
 
@@ -241,8 +259,16 @@ def test_a_minted_dataset_verifies(minted: Path) -> None:
 
 def test_no_real_institution_appears_in_minted_output(minted: Path) -> None:
     text = "\n".join(p.read_text(encoding="utf-8") for p in sorted(minted.glob("*.jsonl")))
-    hits = [hit.render() for hit in CORE_DENYLIST.scan(text)]
+    hits = [hit.render() for hit in PACK_DENYLIST.scan(text)]
     assert not hits, "\n".join(hits)
+
+
+def test_no_real_institution_appears_in_evaluation_output(evaluation_minted: Path) -> None:
+    text = "\n".join(
+        path.read_text(encoding="utf-8") for path in sorted(evaluation_minted.glob("*.jsonl"))
+    )
+    hits = [hit.render() for hit in PACK_DENYLIST.scan(text)]
+    assert not hits, "\n".join(hits[:10])
 
 
 def test_every_reference_resolves(minted: Path) -> None:
@@ -262,6 +288,30 @@ def test_every_reference_resolves(minted: Path) -> None:
             assert json.loads(line)["account_id"] in accounts
 
 
+def test_every_parent_respects_declared_relationship_bounds(minted: Path) -> None:
+    account_rows = [
+        json.loads(line) for line in (minted / "account.jsonl").read_text().splitlines()
+    ]
+    transaction_rows = [
+        json.loads(line) for line in (minted / "transaction.jsonl").read_text().splitlines()
+    ]
+    accounts_per_customer = {
+        customer: sum(row["customer_id"] == customer for row in account_rows)
+        for customer in {
+            json.loads(line)["customer_id"]
+            for line in (minted / "customer.jsonl").read_text().splitlines()
+        }
+    }
+    transactions_per_account = {
+        account["account_id"]: sum(
+            row["account_id"] == account["account_id"] for row in transaction_rows
+        )
+        for account in account_rows
+    }
+    assert all(1 <= count <= 3 for count in accounts_per_customer.values())
+    assert all(8 <= count <= 28 for count in transactions_per_account.values())
+
+
 def test_pans_are_emitted_masked(minted: Path) -> None:
     for line in (minted / "card.jsonl").read_text(encoding="utf-8").splitlines():
         assert "*" in json.loads(line)["pan_masked"]
@@ -271,7 +321,7 @@ def test_the_anomaly_flag_never_disagrees_with_the_kind(tmp_path: Path) -> None:
     out = tmp_path / "anomaly"
     mint(
         pack=ROOT,
-        recipe="anomaly-mix",
+        recipe="retail-baseline",
         seed=1,
         out=out,
         records={
@@ -310,18 +360,15 @@ def test_packcheck_passes_against_the_pinned_core() -> None:
 
 # Sample freshness.
 
-SAMPLE_COUNTS = dict.fromkeys(
-    [
-        "customer",
-        "account",
-        "card",
-        "transaction",
-        "complaint_ticket",
-        "kyc_note",
-        "support_transcript",
-    ],
-    50,
-)
+SAMPLE_COUNTS = {
+    "customer": 6,
+    "account": 6,
+    "card": 3,
+    "transaction": 48,
+    "complaint_ticket": 6,
+    "kyc_note": 6,
+    "support_transcript": 6,
+}
 
 
 def test_samples_regenerate_to_the_same_bytes(tmp_path: Path) -> None:
@@ -380,7 +427,7 @@ def test_the_readme_example_is_real_output_not_an_illustration() -> None:
 
 
 def test_the_readme_states_the_counts_it_claims() -> None:
-    banks = len(PACK.lexicons["banks_fictional"]["values"])
+    banks = len(PACK.lexicons["banks_fictional"])
     text = README_EN.read_text(encoding="utf-8")
     assert f"{banks} invented bank names" in text or f"fictional%20banks-{banks}" in text, (
         f"the README's bank count has drifted from the {banks} actually declared"
@@ -419,14 +466,11 @@ def test_each_readme_names_the_release_that_actually_exists(path: Path) -> None:
     older one whose datasets no longer reproduce from these declarations.
     """
     text = path.read_text(encoding="utf-8")
-    tag = f"v{PACK.version}"
-    assert f"/releases/tag/{tag}" in text, (
-        f"{path.name} does not point at {tag}, the version this pack declares"
-    )
-    stale = re.findall(r"/releases/tag/v(\d+\.\d+\.\d+)", text)
-    assert set(stale) == {PACK.version}, (
-        f"{path.name} names releases {sorted(set(stale))} while the pack is {PACK.version}"
-    )
+    assert PACK.version in text, f"{path.name} does not name current version {PACK.version}"
+    assert "under development" in text or "geliştirme aşamasındadır" in text
+    linked = re.findall(r"/releases/tag/v(\d+\.\d+\.\d+)", text)
+    assert linked, f"{path.name} no longer links the latest published release"
+    assert PACK.version not in linked, "an unreleased version must not be presented as published"
 
 
 @pytest.mark.parametrize("path", [README_EN, README_TR], ids=["en", "tr"])
@@ -493,7 +537,15 @@ def test_the_pack_version_is_part_of_what_seeds_the_streams(tmp_path: Path) -> N
         recipe="retail-baseline",
         seed=1,
         out=out,
-        records={"customer": 20},
+        records={
+            "customer": 20,
+            "account": 0,
+            "card": 0,
+            "transaction": 0,
+            "complaint_ticket": 0,
+            "kyc_note": 0,
+            "support_transcript": 0,
+        },
         invocation="pytest",
     )
     changed = (out / "customer.jsonl").read_bytes()
