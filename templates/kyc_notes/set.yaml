@@ -4,13 +4,13 @@ entries:
   text: 'Musteri gorusmesi notu. Basvuru sahibi {entity:PERSON}, kimlik numarasi {id:TCKN}. Meslek beyani:
     {lex:occupations_bank_tr} olarak, {field:kyc_note.category} alaninda calisiyor. Gelir kaynagi (maas|serbest meslek geliri|kira geliri)
     olarak beyan edildi. Adres teyidi {entity:ADDRESS} uzerinden yapildi, iletisim {id:PHONE} ve {id:EMAIL}.
-    Hesap {id:IBAN} olarak acildi. [?0.6: Isyeri olarak {entity:ORG} beyan edildi; kurumsal vergi numarasi
+    Hesap {id:IBAN} olarak, {lex:products_fictional} urunu kapsaminda acildi. [?0.6: Isyeri olarak {entity:ORG} beyan edildi; kurumsal vergi numarasi
     {id:VKN} olarak kaydedildi.] Belgeler (tam|eksiksiz) olarak alindi ve dosyaya islendi.'
 - id: kyc_with_note
   weight: '0.5'
   text: 'Musteri gorusmesi notu. Basvuru sahibi {entity:PERSON}, kimlik numarasi {id:TCKN}. Meslek beyani:
     {lex:occupations_bank_tr} olarak, {field:kyc_note.category} alaninda calisiyor. Gelir kaynagi (maas|serbest meslek geliri|kira geliri)
     olarak beyan edildi. Adres teyidi {entity:ADDRESS} uzerinden yapildi, iletisim {id:PHONE} ve {id:EMAIL}.
-    Hesap {id:IBAN} olarak acildi. [?0.6: Isyeri olarak {entity:ORG} beyan edildi; kurumsal vergi numarasi
+    Hesap {id:IBAN} olarak, {lex:products_fictional} urunu kapsaminda acildi. [?0.6: Isyeri olarak {entity:ORG} beyan edildi; kurumsal vergi numarasi
     {id:VKN} olarak kaydedildi.] Belgeler (tam|eksiksiz) olarak alindi ve dosyaya islendi.[?special: Gorusmede
     {entity:UNION} uyeligi beyan edildi.]'

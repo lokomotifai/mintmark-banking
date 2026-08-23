@@ -1,65 +1,105 @@
 entries:
 - id: eval_health_religion
   weight: '1'
-  text: 'Temsilci: Iyi gunler. Musteri: {entity:PERSON} ben ariyorum. Temsilci: Kimlik dogrulamasi icin
-    {id:TCKN}, dogum tarihi {entity:DOB} dogru mu? Musteri: Evet. Adresim {entity:ADDRESS}, telefonum
-    {id:PHONE}, epostam {id:EMAIL}. Temsilci: {id:IBAN} hesabiniz ve {id:PAN} kartiniz gorunuyor. Musteri:
-    Odeme {entity:ORG} firmasina, vergi numarasi {id:VKN} idi. [?special: Musteri: {entity:HEALTH} durumumu
-    da kayda gecirir misiniz?] [?special: Temsilci: {entity:RELIGION} notunu dosyaniza ekledim.] Temsilci:
-    Kaydiniz olusturuldu.'
+  text: '(Cagri kaydi ozeti.|Telefon gorusmesi dokumu.|Destek hatti kaydi.|Musteri hizmetleri notu.)
+    (Arayan|Gorusulen musteri|Hat sahibi) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. (Gorusme
+    konusu|Cagri konusu) {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
+    [?0.6:(Adres|Sistemde kayitli adres) {entity:ADDRESS}. ][?0.75:(Geri donus numarasi|Telefon)
+    {id:PHONE}[?0.6:, (eposta|e-posta) {id:EMAIL}]. ][?0.8:(Hesap|Bildirilen hesap) {id:IBAN} uzerinden
+    islem gorusuldu. ][?0.4:(Kart|Islem karti) {id:PAN} sorgulandi. ][?0.6:(Karsi taraf|Islem yapilan
+    kurum) {entity:ORG}[?0.55:, (vergi numarasi|vergi kimlik numarasi) {id:VKN}]. ][?special:
+    (Gorusmede|Arayan tarafindan) {entity:HEALTH} beyan edildi.][?special: (Ayrica|Kayda)
+    {entity:RELIGION} notu eklendi.] (Cagri kapatildi.|Kayit tamamlandi.|Gorusme sonlandirildi.|Talep
+    siraya alindi.)'
 - id: eval_union_ethnicity
   weight: '1'
-  text: 'Temsilci: Iyi gunler. Musteri: {entity:PERSON} ben ariyorum. Temsilci: Kimlik dogrulamasi icin
-    {id:TCKN}, dogum tarihi {entity:DOB} dogru mu? Musteri: Evet. Adresim {entity:ADDRESS}, telefonum
-    {id:PHONE}, epostam {id:EMAIL}. Temsilci: {id:IBAN} hesabiniz ve {id:PAN} kartiniz gorunuyor. Musteri:
-    Odeme {entity:ORG} firmasina, vergi numarasi {id:VKN} idi. [?special: Musteri: {entity:UNION} durumumu
-    da kayda gecirir misiniz?] [?special: Temsilci: {entity:ETHNICITY} notunu dosyaniza ekledim.] Temsilci:
-    Kaydiniz olusturuldu.'
+  text: '(Cagri kaydi ozeti.|Telefon gorusmesi dokumu.|Destek hatti kaydi.|Musteri hizmetleri notu.)
+    (Arayan|Gorusulen musteri|Hat sahibi) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. (Gorusme
+    konusu|Cagri konusu) {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
+    [?0.6:(Adres|Sistemde kayitli adres) {entity:ADDRESS}. ][?0.75:(Geri donus numarasi|Telefon)
+    {id:PHONE}[?0.6:, (eposta|e-posta) {id:EMAIL}]. ][?0.8:(Hesap|Bildirilen hesap) {id:IBAN} uzerinden
+    islem gorusuldu. ][?0.4:(Kart|Islem karti) {id:PAN} sorgulandi. ][?0.6:(Karsi taraf|Islem yapilan
+    kurum) {entity:ORG}[?0.55:, (vergi numarasi|vergi kimlik numarasi) {id:VKN}]. ][?special:
+    (Gorusmede|Arayan tarafindan) {entity:UNION} beyan edildi.][?special: (Ayrica|Kayda)
+    {entity:ETHNICITY} notu eklendi.] (Cagri kapatildi.|Kayit tamamlandi.|Gorusme sonlandirildi.|Talep
+    siraya alindi.)'
 - id: eval_political_criminal
   weight: '1'
-  text: 'Temsilci: Iyi gunler. Musteri: {entity:PERSON} ben ariyorum. Temsilci: Kimlik dogrulamasi icin
-    {id:TCKN}, dogum tarihi {entity:DOB} dogru mu? Musteri: Evet. Adresim {entity:ADDRESS}, telefonum
-    {id:PHONE}, epostam {id:EMAIL}. Temsilci: {id:IBAN} hesabiniz ve {id:PAN} kartiniz gorunuyor. Musteri:
-    Odeme {entity:ORG} firmasina, vergi numarasi {id:VKN} idi. [?special: Musteri: {entity:POLITICAL}
-    durumumu da kayda gecirir misiniz?] [?special: Temsilci: {entity:CRIMINAL} notunu dosyaniza ekledim.]
-    Temsilci: Kaydiniz olusturuldu.'
+  text: '(Cagri kaydi ozeti.|Telefon gorusmesi dokumu.|Destek hatti kaydi.|Musteri hizmetleri notu.)
+    (Arayan|Gorusulen musteri|Hat sahibi) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. (Gorusme
+    konusu|Cagri konusu) {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
+    [?0.6:(Adres|Sistemde kayitli adres) {entity:ADDRESS}. ][?0.75:(Geri donus numarasi|Telefon)
+    {id:PHONE}[?0.6:, (eposta|e-posta) {id:EMAIL}]. ][?0.8:(Hesap|Bildirilen hesap) {id:IBAN} uzerinden
+    islem gorusuldu. ][?0.4:(Kart|Islem karti) {id:PAN} sorgulandi. ][?0.6:(Karsi taraf|Islem yapilan
+    kurum) {entity:ORG}[?0.55:, (vergi numarasi|vergi kimlik numarasi) {id:VKN}]. ][?special:
+    (Gorusmede|Arayan tarafindan) {entity:POLITICAL} beyan edildi.][?special: (Ayrica|Kayda)
+    {entity:CRIMINAL} notu eklendi.] (Cagri kapatildi.|Kayit tamamlandi.|Gorusme sonlandirildi.|Talep
+    siraya alindi.)'
 - id: eval_religion_biometric_ref
   weight: '1'
-  text: 'Temsilci: Iyi gunler. Musteri: {entity:PERSON} ben ariyorum. Temsilci: Kimlik dogrulamasi icin
-    {id:TCKN}, dogum tarihi {entity:DOB} dogru mu? Musteri: Evet. Adresim {entity:ADDRESS}, telefonum
-    {id:PHONE}, epostam {id:EMAIL}. Temsilci: {id:IBAN} hesabiniz ve {id:PAN} kartiniz gorunuyor. Musteri:
-    Odeme {entity:ORG} firmasina, vergi numarasi {id:VKN} idi. [?special: Musteri: {entity:RELIGION} durumumu
-    da kayda gecirir misiniz?] [?special: Temsilci: {entity:BIOMETRIC_REF} notunu dosyaniza ekledim.]
-    Temsilci: Kaydiniz olusturuldu.'
+  text: '(Cagri kaydi ozeti.|Telefon gorusmesi dokumu.|Destek hatti kaydi.|Musteri hizmetleri notu.)
+    (Arayan|Gorusulen musteri|Hat sahibi) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. (Gorusme
+    konusu|Cagri konusu) {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
+    [?0.6:(Adres|Sistemde kayitli adres) {entity:ADDRESS}. ][?0.75:(Geri donus numarasi|Telefon)
+    {id:PHONE}[?0.6:, (eposta|e-posta) {id:EMAIL}]. ][?0.8:(Hesap|Bildirilen hesap) {id:IBAN} uzerinden
+    islem gorusuldu. ][?0.4:(Kart|Islem karti) {id:PAN} sorgulandi. ][?0.6:(Karsi taraf|Islem yapilan
+    kurum) {entity:ORG}[?0.55:, (vergi numarasi|vergi kimlik numarasi) {id:VKN}]. ][?special:
+    (Gorusmede|Arayan tarafindan) {entity:RELIGION} beyan edildi.][?special: (Ayrica|Kayda)
+    {entity:BIOMETRIC_REF} notu eklendi.] (Cagri kapatildi.|Kayit tamamlandi.|Gorusme
+    sonlandirildi.|Talep siraya alindi.)'
 - id: eval_ethnicity_sexual_life
   weight: '1'
-  text: 'Temsilci: Iyi gunler. Musteri: {entity:PERSON} ben ariyorum. Temsilci: Kimlik dogrulamasi icin
-    {id:TCKN}, dogum tarihi {entity:DOB} dogru mu? Musteri: Evet. Adresim {entity:ADDRESS}, telefonum
-    {id:PHONE}, epostam {id:EMAIL}. Temsilci: {id:IBAN} hesabiniz ve {id:PAN} kartiniz gorunuyor. Musteri:
-    Odeme {entity:ORG} firmasina, vergi numarasi {id:VKN} idi. [?special: Musteri: {entity:ETHNICITY}
-    durumumu da kayda gecirir misiniz?] [?special: Temsilci: {entity:SEXUAL_LIFE} notunu dosyaniza ekledim.]
-    Temsilci: Kaydiniz olusturuldu.'
+  text: '(Cagri kaydi ozeti.|Telefon gorusmesi dokumu.|Destek hatti kaydi.|Musteri hizmetleri notu.)
+    (Arayan|Gorusulen musteri|Hat sahibi) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. (Gorusme
+    konusu|Cagri konusu) {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
+    [?0.6:(Adres|Sistemde kayitli adres) {entity:ADDRESS}. ][?0.75:(Geri donus numarasi|Telefon)
+    {id:PHONE}[?0.6:, (eposta|e-posta) {id:EMAIL}]. ][?0.8:(Hesap|Bildirilen hesap) {id:IBAN} uzerinden
+    islem gorusuldu. ][?0.4:(Kart|Islem karti) {id:PAN} sorgulandi. ][?0.6:(Karsi taraf|Islem yapilan
+    kurum) {entity:ORG}[?0.55:, (vergi numarasi|vergi kimlik numarasi) {id:VKN}]. ][?special:
+    (Gorusmede|Arayan tarafindan) {entity:ETHNICITY} beyan edildi.][?special: (Ayrica|Kayda)
+    {entity:SEXUAL_LIFE} notu eklendi.] (Cagri kapatildi.|Kayit tamamlandi.|Gorusme sonlandirildi.|Talep
+    siraya alindi.)'
 - id: eval_criminal_health
   weight: '1'
-  text: 'Temsilci: Iyi gunler. Musteri: {entity:PERSON} ben ariyorum. Temsilci: Kimlik dogrulamasi icin
-    {id:TCKN}, dogum tarihi {entity:DOB} dogru mu? Musteri: Evet. Adresim {entity:ADDRESS}, telefonum
-    {id:PHONE}, epostam {id:EMAIL}. Temsilci: {id:IBAN} hesabiniz ve {id:PAN} kartiniz gorunuyor. Musteri:
-    Odeme {entity:ORG} firmasina, vergi numarasi {id:VKN} idi. [?special: Musteri: {entity:CRIMINAL} durumumu
-    da kayda gecirir misiniz?] [?special: Temsilci: {entity:HEALTH} notunu dosyaniza ekledim.] Temsilci:
-    Kaydiniz olusturuldu.'
+  text: '(Cagri kaydi ozeti.|Telefon gorusmesi dokumu.|Destek hatti kaydi.|Musteri hizmetleri notu.)
+    (Arayan|Gorusulen musteri|Hat sahibi) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. (Gorusme
+    konusu|Cagri konusu) {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
+    [?0.6:(Adres|Sistemde kayitli adres) {entity:ADDRESS}. ][?0.75:(Geri donus numarasi|Telefon)
+    {id:PHONE}[?0.6:, (eposta|e-posta) {id:EMAIL}]. ][?0.8:(Hesap|Bildirilen hesap) {id:IBAN} uzerinden
+    islem gorusuldu. ][?0.4:(Kart|Islem karti) {id:PAN} sorgulandi. ][?0.6:(Karsi taraf|Islem yapilan
+    kurum) {entity:ORG}[?0.55:, (vergi numarasi|vergi kimlik numarasi) {id:VKN}]. ][?special:
+    (Gorusmede|Arayan tarafindan) {entity:CRIMINAL} beyan edildi.][?special: (Ayrica|Kayda)
+    {entity:HEALTH} notu eklendi.] (Cagri kapatildi.|Kayit tamamlandi.|Gorusme sonlandirildi.|Talep
+    siraya alindi.)'
 - id: eval_biometric_ref_union
   weight: '1'
-  text: 'Temsilci: Iyi gunler. Musteri: {entity:PERSON} ben ariyorum. Temsilci: Kimlik dogrulamasi icin
-    {id:TCKN}, dogum tarihi {entity:DOB} dogru mu? Musteri: Evet. Adresim {entity:ADDRESS}, telefonum
-    {id:PHONE}, epostam {id:EMAIL}. Temsilci: {id:IBAN} hesabiniz ve {id:PAN} kartiniz gorunuyor. Musteri:
-    Odeme {entity:ORG} firmasina, vergi numarasi {id:VKN} idi. [?special: Musteri: {entity:BIOMETRIC_REF}
-    durumumu da kayda gecirir misiniz?] [?special: Temsilci: {entity:UNION} notunu dosyaniza ekledim.]
-    Temsilci: Kaydiniz olusturuldu.'
+  text: '(Cagri kaydi ozeti.|Telefon gorusmesi dokumu.|Destek hatti kaydi.|Musteri hizmetleri notu.)
+    (Arayan|Gorusulen musteri|Hat sahibi) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. (Gorusme
+    konusu|Cagri konusu) {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
+    [?0.6:(Adres|Sistemde kayitli adres) {entity:ADDRESS}. ][?0.75:(Geri donus numarasi|Telefon)
+    {id:PHONE}[?0.6:, (eposta|e-posta) {id:EMAIL}]. ][?0.8:(Hesap|Bildirilen hesap) {id:IBAN} uzerinden
+    islem gorusuldu. ][?0.4:(Kart|Islem karti) {id:PAN} sorgulandi. ][?0.6:(Karsi taraf|Islem yapilan
+    kurum) {entity:ORG}[?0.55:, (vergi numarasi|vergi kimlik numarasi) {id:VKN}]. ][?special:
+    (Gorusmede|Arayan tarafindan) {entity:BIOMETRIC_REF} beyan edildi.][?special: (Ayrica|Kayda)
+    {entity:UNION} notu eklendi.] (Cagri kapatildi.|Kayit tamamlandi.|Gorusme sonlandirildi.|Talep
+    siraya alindi.)'
 - id: eval_sexual_life_political
   weight: '1'
-  text: 'Temsilci: Iyi gunler. Musteri: {entity:PERSON} ben ariyorum. Temsilci: Kimlik dogrulamasi icin
-    {id:TCKN}, dogum tarihi {entity:DOB} dogru mu? Musteri: Evet. Adresim {entity:ADDRESS}, telefonum
-    {id:PHONE}, epostam {id:EMAIL}. Temsilci: {id:IBAN} hesabiniz ve {id:PAN} kartiniz gorunuyor. Musteri:
-    Odeme {entity:ORG} firmasina, vergi numarasi {id:VKN} idi. [?special: Musteri: {entity:SEXUAL_LIFE}
-    durumumu da kayda gecirir misiniz?] [?special: Temsilci: {entity:POLITICAL} notunu dosyaniza ekledim.]
-    Temsilci: Kaydiniz olusturuldu.'
+  text: '(Cagri kaydi ozeti.|Telefon gorusmesi dokumu.|Destek hatti kaydi.|Musteri hizmetleri notu.)
+    (Arayan|Gorusulen musteri|Hat sahibi) {entity:PERSON}[?0.5:, meslegi {lex:occupations_bank_tr}],
+    (kimlik|TC kimlik numarasi) {id:TCKN}[?0.7:, (dogum tarihi|dogum) {entity:DOB}]. (Gorusme
+    konusu|Cagri konusu) {lex:complaint_topics_tr}[?0.45: , urun {lex:products_fictional}].
+    [?0.6:(Adres|Sistemde kayitli adres) {entity:ADDRESS}. ][?0.75:(Geri donus numarasi|Telefon)
+    {id:PHONE}[?0.6:, (eposta|e-posta) {id:EMAIL}]. ][?0.8:(Hesap|Bildirilen hesap) {id:IBAN} uzerinden
+    islem gorusuldu. ][?0.4:(Kart|Islem karti) {id:PAN} sorgulandi. ][?0.6:(Karsi taraf|Islem yapilan
+    kurum) {entity:ORG}[?0.55:, (vergi numarasi|vergi kimlik numarasi) {id:VKN}]. ][?special:
+    (Gorusmede|Arayan tarafindan) {entity:SEXUAL_LIFE} beyan edildi.][?special: (Ayrica|Kayda)
+    {entity:POLITICAL} notu eklendi.] (Cagri kapatildi.|Kayit tamamlandi.|Gorusme sonlandirildi.|Talep
+    siraya alindi.)'

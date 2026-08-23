@@ -128,11 +128,11 @@ It declares a coverage target for every label and meets all eighteen:
 
 | Label group | Target | Achieved |
 | --- | --- | --- |
-| PERSON, ADDRESS, ORG, DOB | 300 each | 2000 or more each |
-| HEALTH, RELIGION, ETHNICITY, POLITICAL | 300 each | 482 to 529 |
-| SEXUAL_LIFE, CRIMINAL, BIOMETRIC_REF, UNION | 300 each | 473 to 532 |
-| TCKN, IBAN, PAN, PHONE, EMAIL | 500 each | 2000 or more each |
-| VKN | 500 | 2074 |
+| PERSON, ADDRESS, ORG, DOB | 300 each | 1178 to 2275 |
+| HEALTH, RELIGION, ETHNICITY, POLITICAL | 300 each | 483 to 512 |
+| SEXUAL_LIFE, CRIMINAL, BIOMETRIC_REF, UNION | 300 each | 486 to 509 |
+| TCKN, IBAN, PAN, PHONE, EMAIL | 500 each | 768 to 2095 |
+| VKN | 500 | 1268 |
 
 That last row is worth a note. Every record type in this pack is retail, so there
 is no corporate customer to carry a tax number in a field. VKN reaches the data

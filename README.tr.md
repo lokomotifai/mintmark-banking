@@ -129,11 +129,11 @@ Her etiket için bir kapsam hedefi beyan eder ve on sekizini de tutturur:
 
 | Etiket grubu | Hedef | Ulaşılan |
 | --- | --- | --- |
-| PERSON, ADDRESS, ORG, DOB | her biri 300 | her biri 2000 veya üzeri |
-| HEALTH, RELIGION, ETHNICITY, POLITICAL | her biri 300 | 482 ilâ 529 |
-| SEXUAL_LIFE, CRIMINAL, BIOMETRIC_REF, UNION | her biri 300 | 473 ilâ 532 |
-| TCKN, IBAN, PAN, PHONE, EMAIL | her biri 500 | her biri 2000 veya üzeri |
-| VKN | 500 | 2074 |
+| PERSON, ADDRESS, ORG, DOB | her biri 300 | 1178 ilâ 2275 |
+| HEALTH, RELIGION, ETHNICITY, POLITICAL | her biri 300 | 483 ilâ 512 |
+| SEXUAL_LIFE, CRIMINAL, BIOMETRIC_REF, UNION | her biri 300 | 486 ilâ 509 |
+| TCKN, IBAN, PAN, PHONE, EMAIL | her biri 500 | 768 ilâ 2095 |
+| VKN | 500 | 1268 |
 
 Son satır bir not hak ediyor. Bu paketteki her kayıt tipi bireyseldir, dolayısıyla
 bir alanda vergi numarası taşıyacak kurumsal müşteri yoktur. VKN veriye bunun

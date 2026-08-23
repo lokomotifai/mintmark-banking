@@ -10,6 +10,25 @@ vendored `mintmark-0.3.0-py3-none-any.whl` whose SHA-256 is recorded in
 `499216efdc8d30ccb21d4a4a03a38b014b0ca870`, rebuilds it, and byte-compares that
 independently sourced wheel with the vendored artifact.
 
+On a mismatch, open an issue rather than replacing the wheel: a changed core
+changes emitted bytes, which is a version event rather than a refresh. Until
+`mintmark 0.2.0` is published on PyPI the check fails, and that is the accurate
+reading of the state: a vendored core nobody else can fetch is a core nobody else
+can verify.
+
+## The vendored wheel is the published one
+
+`vendor/` carries `mintmark-0.2.0-py3-none-any.whl` at SHA-256
+`cc1584375eb5be3fa175d690064a050e5325bafd624e60ddbc745464f4d0ac29`, which is the
+digest PyPI serves for that version. The core builds with `uv build` from a
+locked backend, and that build turned out to be reproducible: the wheel built
+here before the release and the wheel the release workflow published are the same
+bytes.
+
+Do not rely on that by accident. The weekly `core pin` workflow is what actually
+holds the claim, because it fetches the published digest and compares. If a
+future build stops reproducing, that check goes red and the fix is to vendor the
+published artifact rather than to relax the check.
 ## Why there are evaluation twins of the document types
 
 The baseline recipe wants the special-category density of ordinary banking text.
