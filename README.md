@@ -14,7 +14,7 @@
 <p align="center">
   <a href="https://github.com/lokomotifai/mintmark-banking/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/lokomotifai/mintmark-banking/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
   <img alt="Zero engine code" src="https://img.shields.io/badge/engine%20code-none-3C873A?style=flat-square">
-  <img alt="Development version 0.2.0" src="https://img.shields.io/badge/development-v0.2.0-C98A2B?style=flat-square">
+  <a href="https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.2.0"><img alt="Release v0.2.0" src="https://img.shields.io/badge/release-v0.2.0-8A6412?style=flat-square"></a>
   <a href="LICENSE"><img alt="Apache-2.0 license" src="https://img.shields.io/badge/license-Apache--2.0-3B3F46?style=flat-square"></a>
 </p>
 
@@ -49,16 +49,16 @@ AI pilot environments without KVKK exposure, and their vendors cannot reasonably
 ask them to. This pack declares the data those environments need, and the engine
 mints it: deterministic, span-labeled, and sealed by a manifest anyone can check.
 
-**Development version 0.2.0. The latest published reference datasets remain on
-[v0.1.2](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2); no 0.2.0
-dataset is published by this repository change.** What is true today: `packcheck` passes against
-the pinned core, the test suite passes, and the evaluation recipe meets every one of its
-eighteen coverage targets.
+**Release 0.2.0. Its reference datasets are attached to
+[v0.2.0](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.2.0),
+each carrying its own manifest and checksums.** `packcheck` passes against the
+pinned core, the test suite passes, and the evaluation recipe meets every one of
+its eighteen coverage targets.
 
 > [!IMPORTANT]
 > **What this pack is not.** It is not anonymization of your banking data; it
 > ingests none. It is not a compliance guarantee and not a legal safe harbor. The
-> anomaly recipe is detector-side test data and this repository documents no
+> anomaly labels are detector-side test data and this repository documents no
 > evasion guidance of any kind. Generated phone numbers can coincide with
 > assigned ones, because the Turkish numbering plan reserves no fictional range.
 > This data is for testing systems. It is never for contacting anyone.
@@ -238,9 +238,9 @@ as the artifact it runs against.
 
 ## Project status
 
-Version 0.2.0 is under development. The latest published reference datasets remain attached to
-[v0.1.2](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2); they were minted with the
-safe identifier policy at the seeds declared in
+Version 0.2.0 is released. Its two reference datasets are attached to
+[v0.2.0](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.2.0);
+they were minted with the safe identifier policy at the seeds declared in
 [docs/reference-datasets.json](docs/reference-datasets.json). The engine is on PyPI as
 [`mintmark`](https://pypi.org/project/mintmark/).
 
@@ -274,7 +274,6 @@ right to the Mintmark name or logo; see [TRADEMARKS.md](TRADEMARKS.md).
 Reference datasets are licensed **CC BY 4.0**: use them for anything, including
 commercially, and credit the source. Every dataset carries its own credit line in
 `MINTMARK.json` and `mintmark verify` prints it, so nothing has to be assembled by
-hand. See [LICENSE-DATASETS.md](LICENSE-DATASETS.md). Pending legal confirmation;
-nothing here states it as settled.
+hand. See [LICENSE-DATASETS.md](LICENSE-DATASETS.md).
 
 <p align="center"><sub>Part of the Mintmark family: <a href="https://github.com/lokomotifai/mintmark">the engine</a> · <a href="https://github.com/lokomotifai/mintmark-insurance">insurance</a> · <a href="https://github.com/lokomotifai/mintmark-hr">human resources</a></sub></p>

@@ -14,7 +14,7 @@
 <p align="center">
   <a href="https://github.com/lokomotifai/mintmark-banking/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/lokomotifai/mintmark-banking/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
   <img alt="Sıfır motor kodu" src="https://img.shields.io/badge/motor%20kodu-yok-3C873A?style=flat-square">
-  <img alt="Geliştirme sürümü 0.2.0" src="https://img.shields.io/badge/geliştirme-v0.2.0-C98A2B?style=flat-square">
+  <a href="https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.2.0"><img alt="Sürüm v0.2.0" src="https://img.shields.io/badge/sürüm-v0.2.0-8A6412?style=flat-square"></a>
   <a href="LICENSE"><img alt="Apache-2.0 lisansı" src="https://img.shields.io/badge/lisans-Apache--2.0-3B3F46?style=flat-square"></a>
 </p>
 
@@ -50,16 +50,16 @@ makul olarak isteyemez. Bu paket o ortamların ihtiyaç duyduğu veriyi beyan ed
 motor da basar: deterministik, span düzeyinde etiketli ve herkesin
 denetleyebileceği bir manifestoyla mühürlenmiş.
 
-**Geliştirme sürümü 0.2.0. En son yayımlanan referans veri kümeleri
-[v0.1.2 sürümünde](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2) kalır;
-bu depo değişikliği 0.2.0 veri kümesi yayımlamaz.** Bugün doğru olan: `packcheck` sabitlenmiş çekirdeğe karşı
-geçiyor, test paketi geçiyor ve değerlendirme tarifi on sekiz kapsam hedefinin
-hepsini tutturuyor.
+**Sürüm 0.2.0. Referans veri kümeleri
+[v0.2.0 sürümüne](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.2.0)
+eklenmiştir; her biri kendi künyesini ve sağlamalarını taşır.** `packcheck`
+sabitlenmiş çekirdeğe karşı geçiyor, test paketi geçiyor ve değerlendirme tarifi
+on sekiz kapsam hedefinin hepsini tutturuyor.
 
 > [!IMPORTANT]
 > **Bu paket ne değildir.** Bankacılık verinizin anonimleştirilmesi değildir; hiç
 > veri almaz. Uyumluluk garantisi değildir, hukuki güvenli liman değildir. Anomali
-> tarifi dedektör tarafı test verisidir ve bu depo hiçbir atlatma rehberliği
+> etiketleri dedektör tarafı test verisidir ve bu depo hiçbir atlatma rehberliği
 > içermez. Üretilen telefon numaraları atanmış numaralarla çakışabilir, çünkü
 > Türkiye numara planı kurgusal bir aralık ayırmaz. Bu veri sistemleri test etmek
 > içindir. Hiçbir zaman kimseye ulaşmak için değildir.
@@ -239,10 +239,10 @@ koştuğu artefakt kadar iyidir.
 
 ## Proje durumu
 
-Sürüm 0.2.0 geliştirme aşamasındadır. En son yayımlanan iki referans veri kümesi
-[v0.1.2](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.1.2) sürümünde kalır;
-[docs/reference-datasets.json](docs/reference-datasets.json) içinde bildirilen
-tohumlarla ve güvenli kimlik politikasıyla üretildiler. Motor PyPI'de
+Sürüm 0.2.0 yayımlanmıştır. İki referans veri kümesi
+[v0.2.0](https://github.com/lokomotifai/mintmark-banking/releases/tag/v0.2.0)
+sürümüne eklenmiştir; [docs/reference-datasets.json](docs/reference-datasets.json)
+içinde bildirilen tohumlarla ve güvenli kimlik politikasıyla üretildiler. Motor PyPI'de
 [`mintmark`](https://pypi.org/project/mintmark/) olarak yayımlanmıştır.
 
 Tohumlar bilerek yerleşiktir. Değişen bir tohum yayımlanmış bir manifestoyu
@@ -274,7 +274,6 @@ Referans veri kümeleri **CC BY 4.0** ile lisanslıdır: ticari kullanım dahil 
 amaçla kullanabilirsiniz, kaynağı belirtmeniz yeterlidir. Her veri kümesi kendi
 atıf satırını `MINTMARK.json` içinde taşır ve `mintmark verify` bunu yazdırır;
 elle bir şey kurmanız gerekmez. Bakınız
-[LICENSE-DATASETS.md](LICENSE-DATASETS.md). Hukuki teyit beklemektedir; burada
-hiçbir şey bunu yerleşik olarak belirtmez.
+[LICENSE-DATASETS.md](LICENSE-DATASETS.md).
 
 <p align="center"><sub>Mintmark ailesinin parçası: <a href="https://github.com/lokomotifai/mintmark">çekirdek</a> · <a href="https://github.com/lokomotifai/mintmark-insurance">sigorta</a> · <a href="https://github.com/lokomotifai/mintmark-hr">insan kaynakları</a></sub></p>
