@@ -18,7 +18,7 @@ import pytest
 import yaml
 from mintmark.annotate import ALL_LABELS
 from mintmark.lexicons import load as load_denylist
-from mintmark.mint import MintError, asset_dir, mint
+from mintmark.minting import MintError, asset_dir, mint
 from mintmark.packs.model import load_pack
 
 ROOT = Path(__file__).resolve().parents[1]
